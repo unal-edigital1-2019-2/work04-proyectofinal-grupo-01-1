@@ -36,16 +36,16 @@ Setup/Hold to clock CAM_pclk
               |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source        | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 --------------+------------+------------+------------+------------+------------------+--------+
-CAM_href      |    0.540(R)|      FAST  |    1.347(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_px_data<0>|   -0.378(R)|      FAST  |    2.090(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_px_data<1>|   -0.392(R)|      FAST  |    2.156(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_px_data<2>|   -0.347(R)|      FAST  |    2.081(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_px_data<3>|   -0.040(R)|      FAST  |    1.724(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_px_data<4>|   -0.182(R)|      FAST  |    1.848(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_px_data<5>|   -0.417(R)|      FAST  |    2.180(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_px_data<6>|   -0.280(R)|      FAST  |    2.060(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_px_data<7>|   -0.116(R)|      FAST  |    1.807(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
-CAM_vsync     |   -0.045(R)|      FAST  |    1.986(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_href      |    0.889(R)|      SLOW  |    1.936(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_px_data<0>|   -0.526(R)|      FAST  |    2.466(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_px_data<1>|   -0.288(R)|      FAST  |    2.076(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_px_data<2>|   -0.481(R)|      FAST  |    2.398(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_px_data<3>|   -0.505(R)|      FAST  |    2.336(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_px_data<4>|   -0.473(R)|      FAST  |    2.294(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_px_data<5>|   -0.488(R)|      FAST  |    2.349(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_px_data<6>|   -0.539(R)|      FAST  |    2.421(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_px_data<7>|   -0.463(R)|      FAST  |    2.325(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
+CAM_vsync     |    0.503(R)|      FAST  |    1.836(R)|      SLOW  |CAM_pclk_BUFGP    |   0.000|
 --------------+------------+------------+------------+------------+------------------+--------+
 
 Setup/Hold to clock clk
@@ -53,7 +53,7 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-rst         |    1.802(R)|      SLOW  |    1.311(R)|      SLOW  |clk25M            |   0.000|
+rst         |    1.240(R)|      FAST  |    1.428(R)|      SLOW  |clk25M            |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -61,16 +61,16 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-VGA_B<2>    |        11.644(R)|      SLOW  |         4.252(R)|      FAST  |clk25M            |   0.000|
-VGA_B<3>    |        12.408(R)|      SLOW  |         4.633(R)|      FAST  |clk25M            |   0.000|
-VGA_G<1>    |        12.366(R)|      SLOW  |         4.611(R)|      FAST  |clk25M            |   0.000|
-VGA_G<2>    |        12.438(R)|      SLOW  |         4.677(R)|      FAST  |clk25M            |   0.000|
-VGA_G<3>    |        12.549(R)|      SLOW  |         4.579(R)|      FAST  |clk25M            |   0.000|
-VGA_Hsync_n |        11.060(R)|      SLOW  |         4.094(R)|      FAST  |clk25M            |   0.000|
-VGA_R<1>    |        12.488(R)|      SLOW  |         4.461(R)|      FAST  |clk25M            |   0.000|
-VGA_R<2>    |        12.238(R)|      SLOW  |         4.606(R)|      FAST  |clk25M            |   0.000|
-VGA_R<3>    |        11.869(R)|      SLOW  |         4.381(R)|      FAST  |clk25M            |   0.000|
-VGA_Vsync_n |        11.535(R)|      SLOW  |         4.177(R)|      FAST  |clk25M            |   0.000|
+VGA_B<2>    |        12.534(R)|      SLOW  |         4.384(R)|      FAST  |clk25M            |   0.000|
+VGA_B<3>    |        12.859(R)|      SLOW  |         4.479(R)|      FAST  |clk25M            |   0.000|
+VGA_G<1>    |        12.346(R)|      SLOW  |         4.506(R)|      FAST  |clk25M            |   0.000|
+VGA_G<2>    |        12.970(R)|      SLOW  |         4.579(R)|      FAST  |clk25M            |   0.000|
+VGA_G<3>    |        12.571(R)|      SLOW  |         4.475(R)|      FAST  |clk25M            |   0.000|
+VGA_Hsync_n |        12.722(R)|      SLOW  |         4.599(R)|      FAST  |clk25M            |   0.000|
+VGA_R<1>    |        12.381(R)|      SLOW  |         4.365(R)|      FAST  |clk25M            |   0.000|
+VGA_R<2>    |        12.748(R)|      SLOW  |         4.508(R)|      FAST  |clk25M            |   0.000|
+VGA_R<3>    |        12.450(R)|      SLOW  |         4.364(R)|      FAST  |clk25M            |   0.000|
+VGA_Vsync_n |        12.762(R)|      SLOW  |         4.975(R)|      FAST  |clk25M            |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CAM_pclk
@@ -78,7 +78,7 @@ Clock to Setup on destination clock CAM_pclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CAM_pclk       |    2.160|         |         |         |
+CAM_pclk       |    3.181|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -86,7 +86,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.428|         |         |         |
+clk            |    6.817|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
@@ -97,7 +97,7 @@ clk            |CAM_xclk       |    8.287|
 ---------------+---------------+---------+
 
 
-Analysis completed Wed Feb 12 19:07:49 2020 
+Analysis completed Wed Feb 12 22:59:21 2020 
 --------------------------------------------------------------------------------
 
 Trace Settings:

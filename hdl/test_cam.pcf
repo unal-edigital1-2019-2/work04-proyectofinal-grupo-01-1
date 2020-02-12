@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.68d on Wed Feb 12 19:06:57 2020
+// Written by: Map P.68d on Wed Feb 12 22:58:28 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -52,16 +52,16 @@ PIN DP_RAM/Mram_ram7_pins<64> = BEL "DP_RAM/Mram_ram7" PINNAME CLKBWRCLKL;
 PIN DP_RAM/Mram_ram8_pins<65> = BEL "DP_RAM/Mram_ram8" PINNAME CLKBWRCLKU;
 PIN DP_RAM/Mram_ram8_pins<64> = BEL "DP_RAM/Mram_ram8" PINNAME CLKBWRCLKL;
 TIMEGRP clk25_24_clkout0 = BEL "clk25_24/clkout1_buf" BEL
-        "VGA640x480/countY_0" BEL "VGA640x480/countY_7" BEL
-        "VGA640x480/countY_6" BEL "VGA640x480/countY_8" BEL
-        "VGA640x480/countY_5" BEL "VGA640x480/countY_4" BEL
-        "VGA640x480/countY_3" BEL "VGA640x480/countY_2" BEL
-        "VGA640x480/countY_1" BEL "VGA640x480/countX_9" BEL
-        "VGA640x480/countX_7" BEL "VGA640x480/countX_0" BEL
+        "VGA640x480/countY_0" BEL "VGA640x480/countX_0" BEL
+        "VGA640x480/countY_7" BEL "VGA640x480/countY_6" BEL
+        "VGA640x480/countY_8" BEL "VGA640x480/countY_5" BEL
+        "VGA640x480/countY_4" BEL "VGA640x480/countY_3" BEL
+        "VGA640x480/countY_2" BEL "VGA640x480/countY_1" BEL
         "VGA640x480/countX_8" BEL "VGA640x480/countX_6" BEL
         "VGA640x480/countX_4" BEL "VGA640x480/countX_3" BEL
         "VGA640x480/countX_5" BEL "VGA640x480/countX_2" BEL
-        "VGA640x480/countX_1" PIN "DP_RAM/Mram_ram1_pins<65>" PIN
+        "VGA640x480/countX_1" BEL "VGA640x480/countX_9" BEL
+        "VGA640x480/countX_7" PIN "DP_RAM/Mram_ram1_pins<65>" PIN
         "DP_RAM/Mram_ram1_pins<64>" PIN "DP_RAM/Mram_ram2_pins<65>" PIN
         "DP_RAM/Mram_ram2_pins<64>" PIN "DP_RAM/Mram_ram3_pins<65>" PIN
         "DP_RAM/Mram_ram3_pins<64>" PIN "DP_RAM/Mram_ram4_pins<65>" PIN

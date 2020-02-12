@@ -154,9 +154,7 @@ WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyec
 WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\test_cam.v" Line 162: Result of 18-bit expression is truncated to fit in 15-bit target.
 
 Elaborating module <cam_read(AW=15)>.
-WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 69: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 81: Result of 16-bit expression is truncated to fit in 15-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 83: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 72: Result of 16-bit expression is truncated to fit in 15-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -226,17 +224,15 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     Found 1-bit register for signal <mem_px_data<2>>.
     Found 1-bit register for signal <mem_px_data<1>>.
     Found 1-bit register for signal <mem_px_data<0>>.
-    Found 15-bit register for signal <mem_px_addr>.
-    Found 15-bit register for signal <addr>.
-    Found 2-bit register for signal <cs>.
-    Found 1-bit register for signal <contador>.
     Found 1-bit register for signal <px_wr>.
+    Found 15-bit register for signal <mem_px_addr>.
+    Found 2-bit register for signal <cs>.
     Found 1-bit register for signal <ovsync>.
     Found 1-bit register for signal <mem_px_data<7>>.
     Found finite state machine <FSM_0> for signal <cs>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
-    | Transitions        | 10                                             |
+    | Transitions        | 8                                              |
     | Inputs             | 4                                              |
     | Outputs            | 3                                              |
     | Clock              | pclk (rising_edge)                             |
@@ -244,11 +240,10 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 15-bit adder for signal <addr[14]_GND_8_o_add_7_OUT> created at line 81.
-    Found 1-bit adder for signal <contador_PWR_7_o_add_8_OUT<0>> created at line 83.
+    Found 15-bit adder for signal <_n0051> created at line 72.
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  41 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  25 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <cam_read> synthesized.
@@ -261,16 +256,15 @@ Macro Statistics
  32768x8-bit dual-port RAM                             : 1
 # Multipliers                                          : 1
  9x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 5
- 1-bit adder                                           : 1
+# Adders/Subtractors                                   : 4
  10-bit adder                                          : 1
  15-bit adder                                          : 1
  17-bit adder                                          : 1
  9-bit adder                                           : 1
-# Registers                                            : 16
- 1-bit register                                        : 11
+# Registers                                            : 14
+ 1-bit register                                        : 10
  10-bit register                                       : 1
- 15-bit register                                       : 2
+ 15-bit register                                       : 1
  8-bit register                                        : 1
  9-bit register                                        : 1
 # Comparators                                          : 8
@@ -294,11 +288,6 @@ Synthesizing (advanced) Unit <VGA_Driver640x480>.
 The following registers are absorbed into counter <countX>: 1 register on signal <countX>.
 The following registers are absorbed into counter <countY>: 1 register on signal <countY>.
 Unit <VGA_Driver640x480> synthesized (advanced).
-
-Synthesizing (advanced) Unit <cam_read>.
-The following registers are absorbed into counter <addr>: 1 register on signal <addr>.
-The following registers are absorbed into counter <contador>: 1 register on signal <contador>.
-Unit <cam_read> synthesized (advanced).
 
 Synthesizing (advanced) Unit <test_cam>.
 	Multiplier <Mmult_n0029> in block <test_cam> and adder/subtractor <Madd_n0023_Madd> in block <test_cam> are combined into a MAC<Maddsub_n0029>.
@@ -335,10 +324,10 @@ Macro Statistics
  32768x8-bit dual-port block RAM                       : 1
 # MACs                                                 : 1
  9x8-to-15-bit MAC                                     : 1
-# Counters                                             : 4
- 1-bit up counter                                      : 1
+# Adders/Subtractors                                   : 1
+ 15-bit adder                                          : 1
+# Counters                                             : 2
  10-bit up counter                                     : 1
- 15-bit up counter                                     : 1
  9-bit up counter                                      : 1
 # Registers                                            : 25
  Flip-Flops                                            : 25
@@ -347,8 +336,8 @@ Macro Statistics
  10-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 2
  9-bit comparator lessequal                            : 1
-# Multiplexers                                         : 3
- 15-bit 2-to-1 multiplexer                             : 2
+# Multiplexers                                         : 4
+ 15-bit 2-to-1 multiplexer                             : 3
  8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
@@ -358,13 +347,13 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <cs[1:2]> with gray encoding.
+Optimizing FSM <FSM_0> on signal <cs[1:2]> with user encoding.
 -------------------
  State | Encoding
 -------------------
  00    | 00
  01    | 01
- 10    | 11
+ 10    | 10
 -------------------
 
 Optimizing unit <test_cam> ...
@@ -381,8 +370,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 62
- Flip-Flops                                            : 62
+# Registers                                            : 46
+ Flip-Flops                                            : 46
 
 =========================================================================
 
@@ -405,21 +394,23 @@ Top Level Output File Name         : test_cam.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 218
+# BELS                             : 216
 #      GND                         : 1
-#      INV                         : 3
-#      LUT1                        : 22
-#      LUT2                        : 67
-#      LUT3                        : 5
-#      LUT4                        : 11
-#      LUT5                        : 2
-#      LUT6                        : 7
+#      INV                         : 4
+#      LUT1                        : 36
+#      LUT2                        : 42
+#      LUT3                        : 4
+#      LUT4                        : 8
+#      LUT5                        : 4
+#      LUT6                        : 16
 #      MUXCY                       : 47
+#      MUXF7                       : 1
 #      VCC                         : 1
 #      XORCY                       : 52
-# FlipFlops/Latches                : 62
-#      FD                          : 11
-#      FDE                         : 40
+# FlipFlops/Latches                : 46
+#      FD                          : 3
+#      FDE                         : 24
+#      FDR                         : 8
 #      FDRE                        : 5
 #      FDS                         : 2
 #      FDSE                        : 4
@@ -442,16 +433,16 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              62  out of  126800     0%  
- Number of Slice LUTs:                  117  out of  63400     0%  
-    Number used as Logic:               117  out of  63400     0%  
+ Number of Slice Registers:              46  out of  126800     0%  
+ Number of Slice LUTs:                  114  out of  63400     0%  
+    Number used as Logic:               114  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    127
-   Number with an unused Flip Flop:      65  out of    127    51%  
-   Number with an unused LUT:            10  out of    127     7%  
-   Number of fully used LUT-FF pairs:    52  out of    127    40%  
-   Number of unique control sets:         9
+ Number of LUT Flip Flop pairs used:    124
+   Number with an unused Flip Flop:      78  out of    124    62%  
+   Number with an unused LUT:            10  out of    124     8%  
+   Number of fully used LUT-FF pairs:    36  out of    124    29%  
+   Number of unique control sets:         8
 
 IO Utilization: 
  Number of IOs:                          30
@@ -483,7 +474,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-CAM_pclk                           | BUFGP                  | 51    |
+CAM_pclk                           | BUFGP                  | 35    |
 clk25_24/clkout0                   | BUFG                   | 27    |
 -----------------------------------+------------------------+-------+
 
@@ -495,8 +486,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.079ns (Maximum Frequency: 481.047MHz)
-   Minimum input arrival time before clock: 1.367ns
+   Minimum period: 2.963ns (Maximum Frequency: 337.507MHz)
+   Minimum input arrival time before clock: 1.487ns
    Maximum output required time after clock: 1.744ns
    Maximum combinational path delay: 0.340ns
 
@@ -506,105 +497,102 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CAM_pclk'
-  Clock period: 1.891ns (frequency: 528.823MHz)
-  Total number of paths / destination ports: 420 / 82
+  Clock period: 2.963ns (frequency: 337.507MHz)
+  Total number of paths / destination ports: 741 / 50
 -------------------------------------------------------------------------
-Delay:               1.891ns (Levels of Logic = 16)
-  Source:            ov7076_565_to_332/cs_FSM_FFd1 (FF)
-  Destination:       ov7076_565_to_332/addr_14 (FF)
+Delay:               2.963ns (Levels of Logic = 12)
+  Source:            ov7076_565_to_332/mem_px_addr_0 (FF)
+  Destination:       ov7076_565_to_332/cs_FSM_FFd2 (FF)
   Source Clock:      CAM_pclk rising
   Destination Clock: CAM_pclk rising
 
-  Data Path: ov7076_565_to_332/cs_FSM_FFd1 to ov7076_565_to_332/addr_14
+  Data Path: ov7076_565_to_332/mem_px_addr_0 to ov7076_565_to_332/cs_FSM_FFd2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              38   0.361   0.403  ov7076_565_to_332/cs_FSM_FFd1 (ov7076_565_to_332/cs_FSM_FFd1)
-     LUT2:I1->O            1   0.097   0.000  ov7076_565_to_332/Mcount_addr_lut<0> (ov7076_565_to_332/Mcount_addr_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  ov7076_565_to_332/Mcount_addr_cy<0> (ov7076_565_to_332/Mcount_addr_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<1> (ov7076_565_to_332/Mcount_addr_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<2> (ov7076_565_to_332/Mcount_addr_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<3> (ov7076_565_to_332/Mcount_addr_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<4> (ov7076_565_to_332/Mcount_addr_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<5> (ov7076_565_to_332/Mcount_addr_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<6> (ov7076_565_to_332/Mcount_addr_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<7> (ov7076_565_to_332/Mcount_addr_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<8> (ov7076_565_to_332/Mcount_addr_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<9> (ov7076_565_to_332/Mcount_addr_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<10> (ov7076_565_to_332/Mcount_addr_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<11> (ov7076_565_to_332/Mcount_addr_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<12> (ov7076_565_to_332/Mcount_addr_cy<12>)
-     MUXCY:CI->O           0   0.023   0.000  ov7076_565_to_332/Mcount_addr_cy<13> (ov7076_565_to_332/Mcount_addr_cy<13>)
-     XORCY:CI->O           1   0.370   0.000  ov7076_565_to_332/Mcount_addr_xor<14> (ov7076_565_to_332/Mcount_addr14)
-     FDE:D                     0.008          ov7076_565_to_332/addr_14
+     FDE:C->Q              9   0.361   0.316  ov7076_565_to_332/mem_px_addr_0 (ov7076_565_to_332/mem_px_addr_0)
+     INV:I->O              1   0.113   0.000  ov7076_565_to_332/Madd__n0051_lut<0>_INV_0 (ov7076_565_to_332/Madd__n0051_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  ov7076_565_to_332/Madd__n0051_cy<0> (ov7076_565_to_332/Madd__n0051_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Madd__n0051_cy<1> (ov7076_565_to_332/Madd__n0051_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Madd__n0051_cy<2> (ov7076_565_to_332/Madd__n0051_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Madd__n0051_cy<3> (ov7076_565_to_332/Madd__n0051_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Madd__n0051_cy<4> (ov7076_565_to_332/Madd__n0051_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Madd__n0051_cy<5> (ov7076_565_to_332/Madd__n0051_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Madd__n0051_cy<6> (ov7076_565_to_332/Madd__n0051_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Madd__n0051_cy<7> (ov7076_565_to_332/Madd__n0051_cy<7>)
+     XORCY:CI->O           5   0.370   0.575  ov7076_565_to_332/Madd__n0051_xor<8> (ov7076_565_to_332/_n0051<6>)
+     LUT5:I1->O            1   0.097   0.511  ov7076_565_to_332/_n0142<0>2 (ov7076_565_to_332/_n0142<0>1)
+     LUT6:I3->O            1   0.097   0.000  ov7076_565_to_332/cs_FSM_FFd2-In1 (ov7076_565_to_332/cs_FSM_FFd2-In)
+     FD:D                      0.008          ov7076_565_to_332/cs_FSM_FFd2
     ----------------------------------------
-    Total                      1.891ns (1.488ns logic, 0.403ns route)
-                                       (78.7% logic, 21.3% route)
+    Total                      2.963ns (1.560ns logic, 1.403ns route)
+                                       (52.7% logic, 47.3% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk25_24/clkout0'
-  Clock period: 2.079ns (frequency: 481.047MHz)
-  Total number of paths / destination ports: 291 / 28
+  Clock period: 2.647ns (frequency: 377.843MHz)
+  Total number of paths / destination ports: 290 / 36
 -------------------------------------------------------------------------
-Delay:               2.079ns (Levels of Logic = 3)
+Delay:               2.647ns (Levels of Logic = 3)
   Source:            VGA640x480/countX_3 (FF)
-  Destination:       VGA640x480/countX_9 (FF)
+  Destination:       VGA640x480/countX_0 (FF)
   Source Clock:      clk25_24/clkout0 rising
   Destination Clock: clk25_24/clkout0 rising
 
-  Data Path: VGA640x480/countX_3 to VGA640x480/countX_9
+  Data Path: VGA640x480/countX_3 to VGA640x480/countX_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.361   0.693  VGA640x480/countX_3 (VGA640x480/countX_3)
-     LUT5:I0->O            3   0.097   0.305  VGA640x480/Mcount_countX_val13_SW0 (N9)
-     LUT6:I5->O           10   0.097   0.421  VGA640x480/Mcount_countX_val13 (VGA640x480/Mcount_countX_val1)
-     LUT3:I1->O            1   0.097   0.000  VGA640x480/countX_7_glue_rst (VGA640x480/countX_7_glue_rst)
-     FDS:D                     0.008          VGA640x480/countX_7
+     FDR:C->Q              3   0.361   0.693  VGA640x480/countX_3 (VGA640x480/countX_3)
+     LUT5:I0->O            1   0.097   0.295  VGA640x480/Mcount_countX_val13_SW0 (N31)
+     LUT6:I5->O           12   0.097   0.346  VGA640x480/Mcount_countX_val13 (VGA640x480/Mcount_countX_val1)
+     LUT2:I1->O            8   0.097   0.311  VGA640x480/Mcount_countX_val2 (VGA640x480/Mcount_countX_val)
+     FDR:R                     0.349          VGA640x480/countX_0
     ----------------------------------------
-    Total                      2.079ns (0.660ns logic, 1.419ns route)
-                                       (31.7% logic, 68.3% route)
+    Total                      2.647ns (1.001ns logic, 1.646ns route)
+                                       (37.8% logic, 62.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CAM_pclk'
-  Total number of paths / destination ports: 20 / 19
+  Total number of paths / destination ports: 22 / 17
 -------------------------------------------------------------------------
-Offset:              0.801ns (Levels of Logic = 2)
+Offset:              1.487ns (Levels of Logic = 4)
   Source:            CAM_href (PAD)
-  Destination:       ov7076_565_to_332/mem_px_data_7 (FF)
+  Destination:       ov7076_565_to_332/cs_FSM_FFd2 (FF)
   Destination Clock: CAM_pclk rising
 
-  Data Path: CAM_href to ov7076_565_to_332/mem_px_data_7
+  Data Path: CAM_href to ov7076_565_to_332/cs_FSM_FFd2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   0.001   0.305  CAM_href_IBUF (CAM_href_IBUF)
-     LUT4:I3->O            6   0.097   0.302  ov7076_565_to_332/_n0119_inv1 (ov7076_565_to_332/_n0119_inv)
-     FDE:CE                    0.095          ov7076_565_to_332/mem_px_data_7
+     IBUF:I->O             5   0.001   0.712  CAM_href_IBUF (CAM_href_IBUF)
+     LUT6:I0->O            1   0.097   0.000  ov7076_565_to_332/_n0142<0>3_SW8_F (N33)
+     MUXF7:I0->O           1   0.277   0.295  ov7076_565_to_332/_n0142<0>3_SW8 (N21)
+     LUT6:I5->O            1   0.097   0.000  ov7076_565_to_332/cs_FSM_FFd2-In1 (ov7076_565_to_332/cs_FSM_FFd2-In)
+     FD:D                      0.008          ov7076_565_to_332/cs_FSM_FFd2
     ----------------------------------------
-    Total                      0.801ns (0.193ns logic, 0.607ns route)
-                                       (24.1% logic, 75.9% route)
+    Total                      1.487ns (0.480ns logic, 1.008ns route)
+                                       (32.3% logic, 67.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk25_24/clkout0'
   Total number of paths / destination ports: 21 / 21
 -------------------------------------------------------------------------
-Offset:              1.367ns (Levels of Logic = 3)
+Offset:              1.197ns (Levels of Logic = 2)
   Source:            rst (PAD)
-  Destination:       VGA640x480/countX_8 (FF)
+  Destination:       VGA640x480/countX_0 (FF)
   Destination Clock: clk25_24/clkout0 rising
 
-  Data Path: rst to VGA640x480/countX_8
+  Data Path: rst to VGA640x480/countX_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            14   0.001   0.753  rst_IBUF (rst_IBUF)
-     LUT6:I0->O            8   0.097   0.412  VGA640x480/Mcount_countX_val2 (VGA640x480/Mcount_countX_val)
-     LUT2:I0->O            1   0.097   0.000  VGA640x480/countX_8_rstpot (VGA640x480/countX_8_rstpot)
-     FD:D                      0.008          VGA640x480/countX_8
+     IBUF:I->O            14   0.001   0.439  rst_IBUF (rst_IBUF)
+     LUT2:I0->O            8   0.097   0.311  VGA640x480/Mcount_countX_val2 (VGA640x480/Mcount_countX_val)
+     FDR:R                     0.349          VGA640x480/countX_0
     ----------------------------------------
-    Total                      1.367ns (0.203ns logic, 1.164ns route)
-                                       (14.8% logic, 85.2% route)
+    Total                      1.197ns (0.447ns logic, 0.750ns route)
+                                       (37.3% logic, 62.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk25_24/clkout0'
@@ -655,7 +643,7 @@ Clock to Setup on destination clock CAM_pclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CAM_pclk       |    1.891|         |         |         |
+CAM_pclk       |    2.963|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk25_24/clkout0
@@ -663,20 +651,20 @@ Clock to Setup on destination clock clk25_24/clkout0
                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------+---------+---------+---------+---------+
-clk25_24/clkout0|    2.079|         |         |         |
+clk25_24/clkout0|    2.647|         |         |         |
 ----------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.19 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 14.78 secs
  
 --> 
 
-Total memory usage is 354684 kilobytes
+Total memory usage is 355708 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   24 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 
