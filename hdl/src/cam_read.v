@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module cam_read #(
-		parameter AW = 15 // Cantidad de bits  de la dirección 
+		parameter AW = 15		// Cantidad de bits  de la dirección 
 		)(
 		input pclk,
 		input rst,
@@ -27,9 +27,9 @@ module cam_read #(
 		input href,
 		input [7:0] px_data,
 
-		output [AW-1:0] mem_px_addr,
-		output [7:0]  mem_px_data,
-		output px_wr
+		output reg [AW-1:0] mem_px_addr,
+		output reg [7:0]  mem_px_data,
+		output reg px_wr
    );
 	
 
@@ -41,7 +41,7 @@ captura de datos de la camara
 debe tener en cuenta el nombre de las entradas  y salidad propuestas 
 
 ********************************************************************************/
- reg contador=0;
+	 reg contador=0;
 	 reg [14:0]addr=0;
 	 reg bp;
 	 reg [1:0]cs=0;
@@ -60,8 +60,8 @@ always @ (posedge pclk) begin
 	1: begin
 		if (href==1) begin
 			cs=2;
-			px_wr<=0;
 				if	(contador==0)begin
+				px_wr<=0;
 				mem_px_data[7]<=px_data[7];
 				mem_px_data[6]<=px_data[6];
 				mem_px_data[5]<=px_data[5];
@@ -76,14 +76,14 @@ always @ (posedge pclk) begin
 		end
 	end
 	2: begin
-	cs=1;
 			if	(contador==1)begin
 				mem_px_data[1]<=px_data[4];
 				mem_px_data[0]<=px_data[3];
-				mem_px_addr<=addr;
-				addr=addr+1;
 				#1
 				px_wr<=1;
+				mem_px_addr<=addr;
+				addr=addr+1;
+				cs=1;
 			end
 		contador=contador+1;
 		end
