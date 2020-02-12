@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.39 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.39 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Reading design: test_cam.prj
 
@@ -154,10 +154,9 @@ WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyec
 WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\test_cam.v" Line 162: Result of 18-bit expression is truncated to fit in 15-bit target.
 
 Elaborating module <cam_read(AW=15)>.
-WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 71: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 85: Result of 16-bit expression is truncated to fit in 15-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 88: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 51: Assignment to ohref ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 69: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 81: Result of 16-bit expression is truncated to fit in 15-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 83: Result of 2-bit expression is truncated to fit in 1-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -227,11 +226,11 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     Found 1-bit register for signal <mem_px_data<2>>.
     Found 1-bit register for signal <mem_px_data<1>>.
     Found 1-bit register for signal <mem_px_data<0>>.
-    Found 1-bit register for signal <px_wr>.
     Found 15-bit register for signal <mem_px_addr>.
     Found 15-bit register for signal <addr>.
     Found 2-bit register for signal <cs>.
     Found 1-bit register for signal <contador>.
+    Found 1-bit register for signal <px_wr>.
     Found 1-bit register for signal <ovsync>.
     Found 1-bit register for signal <mem_px_data<7>>.
     Found finite state machine <FSM_0> for signal <cs>.
@@ -245,8 +244,8 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 15-bit adder for signal <addr[14]_GND_8_o_add_8_OUT> created at line 85.
-    Found 1-bit adder for signal <contador_PWR_7_o_add_12_OUT<0>> created at line 88.
+    Found 15-bit adder for signal <addr[14]_GND_8_o_add_7_OUT> created at line 81.
+    Found 1-bit adder for signal <contador_PWR_7_o_add_8_OUT<0>> created at line 83.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  41 D-type flip-flop(s).
@@ -408,19 +407,19 @@ Primitive and Black Box Usage:
 ------------------------------
 # BELS                             : 218
 #      GND                         : 1
-#      INV                         : 2
+#      INV                         : 3
 #      LUT1                        : 22
 #      LUT2                        : 67
 #      LUT3                        : 5
 #      LUT4                        : 11
-#      LUT5                        : 3
+#      LUT5                        : 2
 #      LUT6                        : 7
 #      MUXCY                       : 47
 #      VCC                         : 1
 #      XORCY                       : 52
 # FlipFlops/Latches                : 62
-#      FD                          : 13
-#      FDE                         : 38
+#      FD                          : 11
+#      FDE                         : 40
 #      FDRE                        : 5
 #      FDS                         : 2
 #      FDSE                        : 4
@@ -448,11 +447,11 @@ Slice Logic Utilization:
     Number used as Logic:               117  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    126
-   Number with an unused Flip Flop:      64  out of    126    50%  
-   Number with an unused LUT:             9  out of    126     7%  
-   Number of fully used LUT-FF pairs:    53  out of    126    42%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:    127
+   Number with an unused Flip Flop:      65  out of    127    51%  
+   Number with an unused LUT:            10  out of    127     7%  
+   Number of fully used LUT-FF pairs:    52  out of    127    40%  
+   Number of unique control sets:         9
 
 IO Utilization: 
  Number of IOs:                          30
@@ -508,7 +507,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CAM_pclk'
   Clock period: 1.891ns (frequency: 528.823MHz)
-  Total number of paths / destination ports: 419 / 80
+  Total number of paths / destination ports: 420 / 82
 -------------------------------------------------------------------------
 Delay:               1.891ns (Levels of Logic = 16)
   Source:            ov7076_565_to_332/cs_FSM_FFd1 (FF)
@@ -558,7 +557,7 @@ Delay:               2.079ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               3   0.361   0.693  VGA640x480/countX_3 (VGA640x480/countX_3)
-     LUT5:I0->O            3   0.097   0.305  VGA640x480/Mcount_countX_val13_SW0 (N4)
+     LUT5:I0->O            3   0.097   0.305  VGA640x480/Mcount_countX_val13_SW0 (N9)
      LUT6:I5->O           10   0.097   0.421  VGA640x480/Mcount_countX_val13 (VGA640x480/Mcount_countX_val1)
      LUT3:I1->O            1   0.097   0.000  VGA640x480/countX_7_glue_rst (VGA640x480/countX_7_glue_rst)
      FDS:D                     0.008          VGA640x480/countX_7
@@ -570,7 +569,7 @@ Delay:               2.079ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CAM_pclk'
   Total number of paths / destination ports: 20 / 19
 -------------------------------------------------------------------------
-Offset:              0.805ns (Levels of Logic = 2)
+Offset:              0.801ns (Levels of Logic = 2)
   Source:            CAM_href (PAD)
   Destination:       ov7076_565_to_332/mem_px_data_7 (FF)
   Destination Clock: CAM_pclk rising
@@ -579,12 +578,12 @@ Offset:              0.805ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.001   0.309  CAM_href_IBUF (CAM_href_IBUF)
-     LUT4:I3->O            6   0.097   0.302  ov7076_565_to_332/_n0120_inv1 (ov7076_565_to_332/_n0120_inv)
+     IBUF:I->O             3   0.001   0.305  CAM_href_IBUF (CAM_href_IBUF)
+     LUT4:I3->O            6   0.097   0.302  ov7076_565_to_332/_n0119_inv1 (ov7076_565_to_332/_n0119_inv)
      FDE:CE                    0.095          ov7076_565_to_332/mem_px_data_7
     ----------------------------------------
-    Total                      0.805ns (0.193ns logic, 0.612ns route)
-                                       (24.0% logic, 76.0% route)
+    Total                      0.801ns (0.193ns logic, 0.607ns route)
+                                       (24.1% logic, 75.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk25_24/clkout0'
@@ -621,7 +620,7 @@ Offset:              1.744ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDSE:C->Q             5   0.361   0.530  VGA640x480/countY_6 (VGA640x480/countY_6)
-     LUT3:I0->O            1   0.097   0.379  VGA640x480/Vsync_n_SW0 (N2)
+     LUT3:I0->O            1   0.097   0.379  VGA640x480/Vsync_n_SW0 (N7)
      LUT6:I4->O            1   0.097   0.279  VGA640x480/Vsync_n (VGA_Vsync_n_OBUF)
      OBUF:I->O                 0.000          VGA_Vsync_n_OBUF (VGA_Vsync_n)
     ----------------------------------------
@@ -670,14 +669,14 @@ clk25_24/clkout0|    2.079|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 18.57 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.19 secs
  
 --> 
 
-Total memory usage is 354240 kilobytes
+Total memory usage is 354684 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   25 (   0 filtered)
+Number of warnings :   24 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

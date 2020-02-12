@@ -43,11 +43,9 @@ debe tener en cuenta el nombre de las entradas  y salidad propuestas
 ********************************************************************************/
 	 reg contador=0;
 	 reg [14:0]addr=0;
-	 reg bp;
 	 reg [1:0]cs=0;
 	 reg ovsync;
-	 reg ohref;
-	 
+
 always @ (posedge pclk) begin
 	case (cs)
 	0: begin
@@ -58,7 +56,7 @@ always @ (posedge pclk) begin
 		mem_px_addr<=0;
 	end
 	1: begin
-		if (href==1) begin
+		if (href) begin
 			cs=2;
 				if	(contador==0)begin
 				px_wr<=0;
@@ -79,16 +77,15 @@ always @ (posedge pclk) begin
 			if	(contador==1)begin
 				mem_px_data[1]<=px_data[4];
 				mem_px_data[0]<=px_data[3];
-				#1
-				px_wr<=1;
 				mem_px_addr<=addr;
 				addr=addr+1;
 				cs=1;
+				contador=contador+1;
+				#1
+				px_wr<=1;
 			end
-		contador=contador+1;
 		end
 endcase
 	ovsync=vsync;
-	ohref=href;
 end
 endmodule
