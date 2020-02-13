@@ -15,7 +15,7 @@ este código corresponde a la captura de datos.
 
 una vez entendido se procede a la realización de un diagrama de bloques funcional de la solución a la captura de datos
 
-![DIAGRAMA1](/docs/figs/Diagramadeflujo_cam_read.PNG)
+![DIAGRAMA1](/docs/figs/Diagrama_de_flujo_cam_read.PNG)
 
 
 
