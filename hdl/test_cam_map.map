@@ -10,7 +10,7 @@ Target Device  : xc7a100t
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : artix7 -- $Revision: 1.55 $
-Mapped Date    : Wed Feb 12 22:57:26 2020
+Mapped Date    : Thu Feb 13 17:02:12 2020
 
 Mapping design into LUTs...
 Running directed packing...
@@ -19,70 +19,54 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 26 secs 
-Total CPU  time at the beginning of Placer: 26 secs 
+Total REAL time at the beginning of Placer: 27 secs 
+Total CPU  time at the beginning of Placer: 27 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:b203404) REAL time: 29 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:ac57c08) REAL time: 29 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:b203404) REAL time: 29 secs 
+Phase 2.7  Design Feasibility Check (Checksum:ac57c08) REAL time: 29 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:b203404) REAL time: 29 secs 
+Phase 3.31  Local Placement Optimization (Checksum:ac57c08) REAL time: 29 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
-.........
-WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
-   that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock
-   IOB component <CAM_pclk> is placed at site <G16>. The corresponding BUFGCTRL
-   component <CAM_pclk_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y31>. The clock
-   IO can use the fast path between the IOB and the Clock Buffer if the IOB is
-   placed on a Clock Capable IOB site that has dedicated fast path to BUFGCTRL
-   sites in its half of the device (TOP or BOTTOM). You may want to analyze why
-   this problem exists and correct it. This is normally an ERROR but the
-   CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <CAM_pclk.PAD>
-   allowing your design to continue. This constraint disables all clock placer
-   rules related to the specified COMP.PIN. The use of this override is highly
-   discouraged as it may lead to very poor timing results. It is recommended
-   that this error condition be corrected in the design.
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:f3648a17) REAL time: 34 secs 
+(Checksum:f2310bd9) REAL time: 34 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:f3648a17) REAL time: 34 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:f2310bd9) REAL time: 34 secs 
 
 Phase 6.3  Local Placement Optimization
-Phase 6.3  Local Placement Optimization (Checksum:f3648a17) REAL time: 34 secs 
+Phase 6.3  Local Placement Optimization (Checksum:f2310bd9) REAL time: 35 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:f3648a17) REAL time: 34 secs 
+Phase 7.5  Local Placement Optimization (Checksum:f2310bd9) REAL time: 35 secs 
 
 Phase 8.8  Global Placement
 ........................................
-....
+.....
 ..
+.......................
 ................
-.....................................
-........................................
-.................
-Phase 8.8  Global Placement (Checksum:645106fe) REAL time: 59 secs 
+Phase 8.8  Global Placement (Checksum:e2fd7c61) REAL time: 45 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:645106fe) REAL time: 59 secs 
+Phase 9.5  Local Placement Optimization (Checksum:e2fd7c61) REAL time: 45 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:87004544) REAL time: 1 mins 1 secs 
+Phase 10.18  Placement Optimization (Checksum:64bbeb2c) REAL time: 47 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:87004544) REAL time: 1 mins 1 secs 
+Phase 11.5  Local Placement Optimization (Checksum:64bbeb2c) REAL time: 47 secs 
 
 Phase 12.34  Placement Validation
-Phase 12.34  Placement Validation (Checksum:87004544) REAL time: 1 mins 1 secs 
+Phase 12.34  Placement Validation (Checksum:64bbeb2c) REAL time: 47 secs 
 
-Total REAL time to Placer completion: 1 mins 1 secs 
-Total CPU  time to Placer completion: 1 mins 
+Total REAL time to Placer completion: 47 secs 
+Total CPU  time to Placer completion: 46 secs 
 Running post-placement packing...
 Writing output files...
 
@@ -91,7 +75,7 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    1
+Number of warnings:    0
 Slice Logic Utilization:
   Number of Slice Registers:                    46 out of 126,800    1%
     Number used as Flip Flops:                  46
@@ -111,11 +95,11 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    44 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          103
-    Number with an unused Flip Flop:            63 out of     103   61%
-    Number with an unused LUT:                   9 out of     103    8%
-    Number of fully used LUT-FF pairs:          31 out of     103   30%
+  Number of occupied Slices:                    46 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:          104
+    Number with an unused Flip Flop:            64 out of     104   61%
+    Number with an unused LUT:                  10 out of     104    9%
+    Number of fully used LUT-FF pairs:          30 out of     104   28%
     Number of unique control sets:               8
     Number of slice register sites lost
       to control set restrictions:              34 out of 126,800    1%
@@ -169,9 +153,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                5.76
 
-Peak Memory Usage:  580 MB
-Total REAL time to MAP completion:  1 mins 3 secs 
-Total CPU time to MAP completion:   1 mins 1 secs 
+Peak Memory Usage:  609 MB
+Total REAL time to MAP completion:  49 secs 
+Total CPU time to MAP completion:   48 secs 
 
 Mapping completed.
 See MAP report file "test_cam_map.mrp" for details.

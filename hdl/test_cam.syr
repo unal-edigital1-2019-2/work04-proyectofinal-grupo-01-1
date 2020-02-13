@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: test_cam.prj
 
@@ -154,7 +154,7 @@ WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyec
 WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\test_cam.v" Line 162: Result of 18-bit expression is truncated to fit in 15-bit target.
 
 Elaborating module <cam_read(AW=15)>.
-WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 72: Result of 16-bit expression is truncated to fit in 15-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Julian Pulido\Documents\GitHub\work04-proyectofinal-grupo-01-1\hdl\src\cam_read.v" Line 69: Result of 16-bit expression is truncated to fit in 15-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -240,7 +240,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 15-bit adder for signal <_n0051> created at line 72.
+    Found 15-bit adder for signal <_n0051> created at line 69.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  25 D-type flip-flop(s).
@@ -658,11 +658,11 @@ clk25_24/clkout0|    2.647|         |         |         |
 
 
 Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 14.78 secs
+Total CPU time to Xst completion: 15.44 secs
  
 --> 
 
-Total memory usage is 355708 kilobytes
+Total memory usage is 354236 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   22 (   0 filtered)

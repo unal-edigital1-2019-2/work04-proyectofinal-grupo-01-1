@@ -10,12 +10,12 @@ Target Device  : xc7a100t
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : artix7 -- $Revision: 1.55 $
-Mapped Date    : Wed Feb 12 22:57:26 2020
+Mapped Date    : Thu Feb 13 17:02:12 2020
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    1
+Number of warnings:    0
 Slice Logic Utilization:
   Number of Slice Registers:                    46 out of 126,800    1%
     Number used as Flip Flops:                  46
@@ -35,11 +35,11 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    44 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          103
-    Number with an unused Flip Flop:            63 out of     103   61%
-    Number with an unused LUT:                   9 out of     103    8%
-    Number of fully used LUT-FF pairs:          31 out of     103   30%
+  Number of occupied Slices:                    46 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:          104
+    Number with an unused Flip Flop:            64 out of     104   61%
+    Number with an unused LUT:                  10 out of     104    9%
+    Number of fully used LUT-FF pairs:          30 out of     104   28%
     Number of unique control sets:               8
     Number of slice register sites lost
       to control set restrictions:              34 out of 126,800    1%
@@ -93,9 +93,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                5.76
 
-Peak Memory Usage:  580 MB
-Total REAL time to MAP completion:  1 mins 3 secs 
-Total CPU time to MAP completion:   1 mins 1 secs 
+Peak Memory Usage:  609 MB
+Total REAL time to MAP completion:  49 secs 
+Total CPU time to MAP completion:   48 secs 
 
 Table of Contents
 -----------------
@@ -118,19 +118,6 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
-   that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock
-   IOB component <CAM_pclk> is placed at site <G16>. The corresponding BUFGCTRL
-   component <CAM_pclk_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y31>. The clock
-   IO can use the fast path between the IOB and the Clock Buffer if the IOB is
-   placed on a Clock Capable IOB site that has dedicated fast path to BUFGCTRL
-   sites in its half of the device (TOP or BOTTOM). You may want to analyze why
-   this problem exists and correct it. This is normally an ERROR but the
-   CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <CAM_pclk.PAD>
-   allowing your design to continue. This constraint disables all clock placer
-   rules related to the specified COMP.PIN. The use of this override is highly
-   discouraged as it may lead to very poor timing results. It is recommended
-   that this error condition be corrected in the design.
 
 Section 3 - Informational
 -------------------------

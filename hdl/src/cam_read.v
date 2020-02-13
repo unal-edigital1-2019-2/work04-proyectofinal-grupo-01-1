@@ -34,12 +34,9 @@ module cam_read #(
 	
 
 /********************************************************************************
-
 Por favor colocar en este archivo el desarrollo realizado por el grupo para la 
 captura de datos de la camara 
-
 debe tener en cuenta el nombre de las entradas  y salidad propuestas 
-
 ********************************************************************************/
 	 reg [1:0]cs=0;
 	 reg ovsync;
