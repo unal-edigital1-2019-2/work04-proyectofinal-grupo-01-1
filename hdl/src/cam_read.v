@@ -18,6 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+//hola, commist de prueba
 module cam_read #(
 		parameter AW = 15		// Cantidad de bits  de la direcci�n 
 		)(
