@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RESULTADOS FINALES DEL PROYECTO
 
 en el presente se encuentra documentado el trabajo del grupo para la realización de un módulo de captura de datos
@@ -10,3 +11,11 @@ e instanciarlo en el test_cam.v.
 
 
 este código corresponde a la captura de datos.
+=======
+## ENTREGA FINAL - IMPLEMENTACIÓN
+
+## Introducción 
+
+En esta parte del proyecto se realizó la integración de los módulos del proyecto junto con todas las pruebas pertinentes para lograr los objetivos planteados al inicio del proyecto.
+
+>>>>>>> f8d724157ec93f0576278f7b1689e2c38358df2a
