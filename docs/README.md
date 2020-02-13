@@ -68,7 +68,7 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
    );
    reg [1:0]cs=0;// Actúa como el contador de case (para establecer los casos)
 	 reg ovsync;// Utilizado para guardar el valor pasado de Vsync
-	 
+	 reg bp=1'b0;
 always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando pclk se encuentre en un flanco de subida
 	case (cs)//inicio de la máquina de estados
 	0: begin// estado 0 de la máquina de estados cs=00
@@ -179,3 +179,8 @@ CONSEGUIR BUENOS JUMPER ES INDISPENSABLE, ESTO ATÚAN COMO ANTENAS Y PUEDEN GENE
 NOTA 2: 
 ES IMPERATIVO REALIZAR PRIMERO UN DIAGRAMA A MANO EN UNA HOJA CON LÁPIZ, ESTO NOS PERMITE EVALUAR LA LÓGICA QUE        ESTAMOS USANDO Y SABER EN QUÉ NOS ESTAMOS EQUIVOCANDO.
 
+```HTML5
+<video src="docs/figs/Prueba_video.mp4" controls>
+  Tu navegador no implementa el elemento <code>video</code>.
+</video>
+```
