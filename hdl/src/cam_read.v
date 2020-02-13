@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 //hola, commist de prueba
 module cam_read #(
-		parameter AW = 15		// Cantidad de bits  de la direcci�n 
+		parameter AW = 15		// Cantidad de bits  de la dirección 
 		)(
 		input pclk,
 		input rst,
