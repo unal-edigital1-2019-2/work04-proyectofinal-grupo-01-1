@@ -20,6 +20,8 @@ Se debían sincronizar las señales de entrada para poder realizar una captura d
 
 Posteriormente al realizar el análizis de este diagrama se concluye que Vsync será el encargado de decidirr cuándo se inica la imagen y cuándo finaliza, el href nos dice cuándo se hace el cambio de columna de datos, mientras que pclk se encarga de decirnos qué pixel nos encontramos leyendo.
 
+## DIAGRAMAS
+
 Una vez entendido eso  se procede a la realización de un diagrama de bloques funcional de la solución a la captura de datos:
 
 ![DIAGRAMA1](/docs/figs/Diagrama_de_flujo_cam_read.PNG)
@@ -128,7 +130,7 @@ Para instanciar este bloque en el test_cam.v se utiliza el siguiente código
 		.px_wr(DP_RAM_regW)
    )
 ```
-### Configuración de la cámara por medio de arduino
+### CONFIGURACIÓN DE LA CÁMARA POR MEDIO DE ARDUINO
 Para la implementación de la descripción de hardware fue necesario realizar una configuración a la cámara OV7670 mediante una tarjeta arduino uno para ajustar los parámetros de captura de imagen, de acuerdo con los estandares planteados para el proyecto, entre los registros principales modificados en arduino están:
 * COM7: Se modifica este registro con el fin de activar el modo QCIF, RGB y el test de la barra de color.
 * CLKRC: Este registro se cmabió para usar un reloj externo en la cámara.
