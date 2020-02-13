@@ -1,11 +1,14 @@
 
 # RESULTADOS FINALES DEL PROYECTO
-## UNIVERSIDAD NACIONAL DE COLOMBIA-BOGOTÁ-2020-20192S
+## UNIVERSIDAD NACIONAL DE COLOMBIA-BOGOTÁ-2020-SEMESTRE:20192S
 ### Juan Pablo González Prieto 1075680988
 ### Julián David Pulido Castañeda 1000163697
 ### Sebastián Ruiz Pulido 1032504363
 
-En el presente se encuentra documentado el trabajo del grupo para la realización de un módulo de captura de datos
+## INTRODUCCIÓN
+Durante el transcurso de este semestre se han adquirido habilidades relacionadas con la descripción de hardware con 
+la finalidad de realizar el diseño y la implementación de una cámara de video como cámara fotográfica modelo OV7670.
+En el presente se encuentra documentado el trabajo final  del grupo para la realización de un módulo de captura de datos
 que debe tomar los datos de entrada de la cámara que se encuentran en RGB 565 y transformarlos a formato RGB 332
 e instanciarlo en el test_cam.v.
 
@@ -39,7 +42,7 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
         module cam_read #(
 		    parameter AW = 15		// Cantidad de bits  de la dirección 
 		    )(
-<<<<<<< HEAD
+
 		    input pclk,             //Entrada pclk de la cámara
 		    input rst,              //Reset de la cámara
 		    input vsync,            //Señal Vsync de la cámara que permite saber cuándo empieza una imagen
@@ -49,7 +52,7 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
 		    output reg [AW-1:0] mem_px_addr=0, // Address de la memoria (posición donde se está escribiendo)
 		    output reg [7:0]  mem_px_data, // RGB 565 to RGB 332 aquí trnansformamos el formto RGB 565 a RGB 332
 		    output reg px_wr //  Nos indica si estamos escribiendo en memoria o no
-=======
+
 		    input pclk,             //entrada pclk de la cámara
 		    input rst,              //reset de la cámara
 		    input vsync,            //señal Vsync de la cámara que permite saber cuándo empieza una imagen
@@ -59,24 +62,11 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
 		    output reg [AW-1:0] mem_px_addr=0, // address de ña memoria (posición donde se está escribiendo)
 		    output reg [7:0]  mem_px_data, // RGB 565 to RGB 332 aquí trnansformamos el RGB 565 a RGB 332
 		    output reg px_wr //  nos indica si estamos escribiendo en memoria o no
->>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
+
    );
    reg [1:0]cs=0;// Actúa como el contador de case (para establecer los casos)
 	 reg ovsync;// Utilizado para guardar el valor pasado de Vsync
 	 
-<<<<<<< HEAD
-always @ (posedge pclk) begin// Sentencias que se llevan a cabo siempre y cuando pclk se encuentre en un flanco de subida
-	case (cs)//Inicio de la máquina de estados
-	0: begin// Estado 0 de la máquina de estados cs=00
-		if(ovsync && !vsync)begin//Rápidamente ovsync ha toamdo el primer valor de vsync y procedemos a compararlos, con && garantizamos una comparación lógica  de tipo AND
-		cs=1;// Si ovsync y !vsync =1 entonces procedemos a pasar al estado 1
-		mem_px_addr=0;//Iniciamos en la posición de memoria 0
-		end
-	end
-	1: begin// primer primer estado, cs=01, En este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
-		px_wr=0;// Indicamos que aún no escribimos en la memoria
-		if (href) begin//Debemos asegurar que href se encuentre en flanco de subida para hacer el proceso
-=======
 always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando pclk se encuentre en un flanco de subida
 	case (cs)//inicio de la máquina de estados
 	0: begin// estado 0 de la máquina de estados cs=00
@@ -88,7 +78,6 @@ always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando
 	1: begin// primer estado, cs=01, en este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
 		px_wr=0;// indicamos que aún no escribimos en la memoria
 		if (href) begin//debemos asegurar que href se encuentre en flanco de subida para hacer el proceso
->>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
 /****************************************************************
  En esta parte tomamos los datos más significativo de R(rojo) y V (Verde)
  del primer byte que vienen en formato 565(RGB) y lo guardamos en formato   
@@ -100,14 +89,11 @@ always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando
 				mem_px_data[4]=px_data[2];              
 				mem_px_data[3]=px_data[1];         
 				mem_px_data[2]=px_data[0];
-<<<<<<< HEAD
 				cs=2;// Después de tomar los datos más significativos pasamos al estado 2 
-=======
-				cs=2;// despues de tomar los datos más significativos pasamos al estado 2 
->>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
 		end
 	end
-	2: begin// Estado 2, en este estado procedemos a tomar los datos del color azul(B) que vienen en formato 565 RGB y se pasa a 332 RGB
+	2: begin// Estado 2, en este estado procedemos a tomar los datos del color azul(B) 
+    que vienen en formato 565 RGB y se pasa a 332 RGB
 				mem_px_data[1]=px_data[4];
 				mem_px_data[0]=px_data[3];
 			 	px_wr=1;//Procedemos a escribir en memoria
@@ -122,11 +108,7 @@ always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando
 		end
 		end
 endcase
-<<<<<<< HEAD
 	ovsync<=vsync;// Se usa para que recurrentemente ovsync tome el valor pasado de vsync
-=======
-	ovsync<=vsync;// se usa para que recurrentemente ovsync tome el valor pasado de vsync
->>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
 end
 endmodule
 ```
