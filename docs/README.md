@@ -27,5 +27,7 @@ una vez realizado esto se concluye que que se usará una máquina de estados en 
    * volver a verifica vsync 
 
 
+![DIAGRAMA1](/docs/figs/Maquina_estados.png)
+
 
 
