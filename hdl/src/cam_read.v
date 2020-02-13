@@ -26,6 +26,7 @@ module cam_read #(
 		input vsync,
 		input href,
 		input [7:0] px_data,
+		input btn,
 
 		output reg [AW-1:0] mem_px_addr,
 		output reg [7:0]  mem_px_data,
@@ -40,11 +41,15 @@ debe tener en cuenta el nombre de las entradas  y salidad propuestas
 ********************************************************************************/
 	 reg [1:0]cs=0;
 	 reg ovsync;
-	 
+	 reg bp=1'b0;
 always @ (posedge pclk) begin
+		if(btn)begin
+		bp=bp+1;
+		end
 	case (cs)
 	0: begin
-		if(ovsync && !vsync)begin
+	px_wr=0;
+		if(ovsync && !vsync && !bp)begin
 		cs=1;
 		mem_px_addr=0;
 		end
@@ -65,7 +70,7 @@ always @ (posedge pclk) begin
 	2: begin
 				mem_px_data[1]=px_data[4];
 				mem_px_data[0]=px_data[3];
-			 	px_wr=#1 1;
+			 	px_wr=1;
 				mem_px_addr=mem_px_addr+1;
 				cs=1;
 		if(vsync) begin
@@ -75,9 +80,8 @@ always @ (posedge pclk) begin
 			mem_px_addr=0;
 			cs=0;
 		end
-		end
+	end
 endcase
 	ovsync<=vsync;
 end
 endmodule
-
