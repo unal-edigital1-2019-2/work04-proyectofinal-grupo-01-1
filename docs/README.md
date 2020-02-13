@@ -87,3 +87,14 @@ endcase
 end
 endmodule
 ```
+Entre las diferentes pruebas realizadas para verificar el funcionamiento del dispositivo tenemos:
+
+* Prueba de los límites de la imagen
+![DIAGRAMA1](/docs/figs/Prueba_limitesdeimagen.jfif)
+
+* Prueba de barra de colores de la memoria
+![DIAGRAMA1](/docs/figs/Prueba_barra_coloresenmemoria.jpeg)
+
+* Prueba de la barra de colores dada por la cámara
+![DIAGRAMA1](/docs/figs/Prueba_barra_colorescamara.jpeg)
+![DIAGRAMA1](/docs/figs/Prueba_barra_colorescamara2.jpeg)
