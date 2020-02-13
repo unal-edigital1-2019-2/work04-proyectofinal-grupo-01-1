@@ -159,3 +159,18 @@ Entre las diferentes pruebas realizadas para verificar el funcionamiento del dis
 ## SIMULACIÓN:
 En el paquete de trabajo número 3 se proporsionó una simulación para verificar el funcionamiento de la descripción de hardware ya que debido al paro presentado no se encontraban disponibles los equipos necesarios para su prueba.
 ![DIAGRAMA1](/docs/figs/simulacion.png)
+## NOTAS Y PRECAUCIONES
+
+### 1
+    PRECAUCIÓN 1:
+            ¡ASEGURARSE DE QUE LA CONEXIÓN DE ENERGÍA DE LA CÁMARA SE HACE A 3.3 VOLTIOS Y NO HA 5 VOLTIOS! en esta ocasión la primera cámara se dañó debido a que se conectó a 5V.
+            
+    PRECAUCIÓN 2:
+            ¡ASEGURARSE DE QUE LA CONEXIÓN PULLDOW SE REALICE CORRECTAMENTE, ES DECIR QUE SE ENCUENTRE CONECTADA DE FORMA CORRECTA ENTRE SIOC Y SIOD A LAS RESISTENCIAS Y ENTRADAS DEL ARDUINO CORRESPONDIENTES!
+
+    NOTA 1:
+            CONSEGUIR BUENOS JUMPER ES INDISPENSABLE, ESTO ATÚAN COMO ANTENAS Y PUEDEN GENERAR RUIDO AL MOMENTO DE CAPTURAR LA IMAGEN. PUEDEN APANTALLARSE PARA UN MEJOR RESULTADO. 
+
+    NOTA 2: 
+            ES IMPERATIVO REALIZAR PRIMERO UN DIAGRAMA A MANO EN UNA HOJA CON LÁPIZ, ESTO NOS PERMITE EVALUAR LA LÓGICA QUE        ESTAMOS USANDO Y SABER EN QUÉ NOS ESTAMOS EQUIVOCANDO.
+
