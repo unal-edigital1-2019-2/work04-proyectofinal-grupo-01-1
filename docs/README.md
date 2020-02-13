@@ -92,12 +92,15 @@ endmodule
 ```
 Entre las diferentes pruebas realizadas para verificar el funcionamiento del dispositivo tenemos:
 
-* Prueba de los límites de la imagen
+* Prueba de los límites de la imagen: para esta prueba se se reemplazaron los datos de la cámara por el valor binario del color rojo para verificar que el modulo de alimentación a memoria fuciona correctamente.
 ![DIAGRAMA1](/docs/figs/Prueba_limitesdeimagen.jfif)
 
-* Prueba de barra de colores de la memoria
+* Prueba de barra de colores de la memoria: se muestra el valor default que se encuentra en memoria previo a conectar la cámara.
 ![DIAGRAMA1](/docs/figs/Prueba_barra_coloresenmemoria.jpeg)
 
-* Prueba de la barra de colores dada por la cámara
+* Prueba de la barra de colores dada por la cámara: Por medio del programa arduino se asignó por default la muestra de una barra de colores para los datos de la cámara
 ![DIAGRAMA1](/docs/figs/Prueba_barra_colorescamara.jpeg)
 ![DIAGRAMA1](/docs/figs/Prueba_barra_colorescamara2.jpeg)
+
+* Prueba final: Como ultima prueba se buscó obtener la imagen grabada por la cámara evidenciando una posible desincronización de las señales de entrada ó el fallo físco de la cámara.
+![DIAGRAMA1](/docs/figs/Prueba_barracolores.jpeg)
