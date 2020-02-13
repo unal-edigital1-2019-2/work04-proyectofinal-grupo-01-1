@@ -59,34 +59,39 @@ always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando
 		mem_px_addr=0;//iniciamos en la posición de memoria 0
 		end
 	end
-	1: begin// primer cas, cs=01, en este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
+	1: begin// primer primer estado, cs=01, en este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
 		px_wr=0;// indicamos que aún no escribimos en la memoria
 		if (href) begin//debemos asegurar que href se encuentre en flanco de subida para hacer el proceso
-				mem_px_data[7]=px_data[7];          /****************************************************************
-				mem_px_data[6]=px_data[6];              en esta parte tomamos los datos más significativo de R(rojo) y V (Verde)
-				mem_px_data[5]=px_data[5];              del primer byte que vienen en formato 565(RGB) y lo guardamos en formato   
-				mem_px_data[4]=px_data[2];              332(RGB)
-				mem_px_data[3]=px_data[1];          ******************************************************************/
+/****************************************************************
+ en esta parte tomamos los datos más significativo de R(rojo) y V (Verde)
+ del primer byte que vienen en formato 565(RGB) y lo guardamos en formato   
+ 332(RGB)         
+******************************************************************/
+				mem_px_data[7]=px_data[7];          
+				mem_px_data[6]=px_data[6];             
+				mem_px_data[5]=px_data[5];                 
+				mem_px_data[4]=px_data[2];              
+				mem_px_data[3]=px_data[1];         
 				mem_px_data[2]=px_data[0];
-				cs=2;
+				cs=2;// despues de tomar los datos más significativos ásamos al estado 2 
 		end
 	end
-	2: begin
+	2: begin// estado 2, en este estado procedemos a tomar los datos del color azul(B) que vienen en formato 565 RGB y se pasa a 332 RGB
 				mem_px_data[1]=px_data[4];
 				mem_px_data[0]=px_data[3];
-			 	px_wr=#1 1;
-				mem_px_addr=mem_px_addr+1;
-				cs=1;
-		if(vsync) begin
+			 	px_wr=1;//procedemos a escribir en memoria
+				mem_px_addr=mem_px_addr+1;//nos desplazamos a la siguiente dirección de memoria
+				cs=1;//posteriormente volvemos al estado 1 de la máquina de estados 
+		if(vsync) begin// con este condicional analizamos que si vsync está en un flanco de subida volvemos al estado 0
 		cs=0;
 		end		
-		if (mem_px_addr==19200) begin
-			mem_px_addr=0;
-			cs=0;
+		if (mem_px_addr==19200) begin//limitador de memoria
+			mem_px_addr=0;// si la memoria  llega  a la posición de  19200 píxeles, debe volver a la posición 0 nuevamente
+			cs=0;//nos devolvemos al estado 0 a evaluar vsync
 		end
 		end
 endcase
-	ovsync<=vsync;
+	ovsync<=vsync;// se usa para que recurentemente ovsync tome el valor pasado de vsync
 end
 endmodule
 ```
