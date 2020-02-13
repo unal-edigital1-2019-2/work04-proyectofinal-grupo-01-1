@@ -108,4 +108,4 @@ Entre las diferentes pruebas realizadas para verificar el funcionamiento del dis
 ![DIAGRAMA1](/docs/figs/Prueba_barra_colorescamara2.jpeg)
 
 * Prueba final: Como ultima prueba se buscó obtener la imagen grabada por la cámara evidenciando una posible desincronización de las señales de entrada ó el fallo físco de la cámara.
-![DIAGRAMA1](/docs/figs/Prueba_barracolores.jpeg)
+![DIAGRAMA1](/docs/figs/Prueba_barracolores.jfif)
