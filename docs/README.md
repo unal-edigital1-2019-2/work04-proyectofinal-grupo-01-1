@@ -5,7 +5,10 @@
 ### Julián David Pulido Castañeda 1000163697
 ### Sebastián Ruiz Pulido 1032504363
 
-En el presente se encuentra documentado el trabajo del grupo para la realización de un módulo de captura de datos
+## INTRODUCCIÓN
+Durante el transcurso de este semestre se han adquirido habilidades relacionadas con la descripción de hardware con 
+la finalidad de realizar el diseño y la implementación de una cámara de video como cámara fotográfica modelo OV7670.
+En el presente se encuentra documentado el trabajo final  del grupo para la realización de un módulo de captura de datos
 que debe tomar los datos de entrada de la cámara que se encuentran en RGB 565 y transformarlos a formato RGB 332
 e instanciarlo en el test_cam.v.
 
