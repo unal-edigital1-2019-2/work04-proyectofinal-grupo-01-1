@@ -1,7 +1,7 @@
 Release 14.6 par P.68d (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-1V3SK5I::  Wed Feb 12 22:58:33 2020
+DESKTOP-1V3SK5I::  Thu Feb 13 17:03:05 2020
 
 par -w -intstyle ise -ol high -mt off test_cam_map.ncd test_cam.ncd
 test_cam.pcf 
@@ -45,11 +45,11 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    44 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          103
-    Number with an unused Flip Flop:            63 out of     103   61%
-    Number with an unused LUT:                   9 out of     103    8%
-    Number of fully used LUT-FF pairs:          31 out of     103   30%
+  Number of occupied Slices:                    46 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:          104
+    Number with an unused Flip Flop:            64 out of     104   61%
+    Number with an unused LUT:                  10 out of     104    9%
+    Number of fully used LUT-FF pairs:          30 out of     104   28%
     Number of slice register sites lost
       to control set restrictions:               0 out of 126,800    0%
 
@@ -104,32 +104,32 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 17 secs 
-Finished initial Timing Analysis.  REAL time: 17 secs 
+Starting initial Timing Analysis.  REAL time: 18 secs 
+Finished initial Timing Analysis.  REAL time: 18 secs 
 
 Starting Router
 
 
-Phase  1  : 1329 unrouted;      REAL time: 19 secs 
+Phase  1  : 1327 unrouted;      REAL time: 19 secs 
 
-Phase  2  : 880 unrouted;      REAL time: 19 secs 
+Phase  2  : 878 unrouted;      REAL time: 20 secs 
 
-Phase  3  : 63 unrouted;      REAL time: 21 secs 
+Phase  3  : 58 unrouted;      REAL time: 21 secs 
 
-Phase  4  : 63 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  4  : 58 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
 
 Updating file: test_cam.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 25 secs 
-Total REAL time to Router completion: 25 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
+Total REAL time to Router completion: 26 secs 
 Total CPU time to Router completion: 25 secs 
 
 Partition Implementation Status
@@ -150,11 +150,11 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     6.817ns|     N/A|           0
-  25M                                       | HOLD        |     0.300ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     5.277ns|     N/A|           0
+  25M                                       | HOLD        |     0.298ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net CAM | SETUP       |         N/A|     3.181ns|     N/A|           0
-  _pclk_BUFGP                               | HOLD        |     0.070ns|            |       0|           0
+  Autotimespec constraint for clock net CAM | SETUP       |         N/A|     2.931ns|     N/A|           0
+  _pclk_BUFGP                               | HOLD        |     0.017ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -170,8 +170,8 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 26 secs 
-Total CPU time to PAR completion: 25 secs 
+Total REAL time to PAR completion: 27 secs 
+Total CPU time to PAR completion: 26 secs 
 
 Peak Memory Usage:  502 MB
 

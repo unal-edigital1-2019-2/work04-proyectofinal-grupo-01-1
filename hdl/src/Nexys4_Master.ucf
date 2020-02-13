@@ -1,9 +1,9 @@
 ## Reloj de la nexys 
-#NET "clk"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";
-#NET "clk" TNM_NET = sys_clk_pin;
-## SI se usa la NexysDDR
-NET "clk"   LOC = "E3"   | IOSTANDARD = "LVCMOS33";                           #Bank =35, Pin name = #IO_L12P_T1_MRCC_35,                 Sch name = clk100mhz
+NET "clk"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";
 NET "clk" TNM_NET = sys_clk_pin;
+## SI se usa la NexysDDR
+#NET "clk"   LOC = "E3"   | IOSTANDARD = "LVCMOS33";                           #Bank =35, Pin name = #IO_L12P_T1_MRCC_35,                 Sch name = clk100mhz
+#NET "clk" TNM_NET = sys_clk_pin;
 #TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100 MHz HIGH 50%;
 
 
@@ -27,83 +27,83 @@ NET "clk" TNM_NET = sys_clk_pin;
 #NET "sw<15>"			LOC = "P4"	| IOSTANDARD = "LVCMOS33";		#Bank = 34, Pin name = IO_L14P_T2_SRCC_34,					Sch name = SW15
  
 # Pmod Header JA
-#NET "CAM_px_data<0>"			LOC = "B13"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L1N_T0_AD0N_15,					Sch name = JA1
-#NET "CAM_px_data<1>"			LOC = "F14"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L5N_T0_AD9N_15,					Sch name = JA2
-#NET "CAM_px_data<2>"			LOC = "D17"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L16N_T2_A27_15,					Sch name = JA3
-#NET "CAM_px_data<3>"			LOC = "E17"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L16P_T2_A28_15,					Sch name = JA4
-#NET "CAM_px_data<4>"			LOC = "G13"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_0_15,								Sch name = JA7
-#NET "CAM_px_data<5>"			LOC = "C17"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L20N_T3_A19_15,					Sch name = JA8
-#NET "CAM_px_data<6>"			LOC = "D18"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L21N_T3_A17_15,					Sch name = JA9
-#NET "CAM_px_data<7>"			LOC = "E18"	| IOSTANDARD = "LVCMOS33";	
+NET "CAM_px_data<0>"			LOC = "B13"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L1N_T0_AD0N_15,					Sch name = JA1
+NET "CAM_px_data<1>"			LOC = "F14"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L5N_T0_AD9N_15,					Sch name = JA2
+NET "CAM_px_data<2>"			LOC = "D17"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L16N_T2_A27_15,					Sch name = JA3
+NET "CAM_px_data<3>"			LOC = "E17"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L16P_T2_A28_15,					Sch name = JA4
+NET "CAM_px_data<4>"			LOC = "G13"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_0_15,								Sch name = JA7
+NET "CAM_px_data<5>"			LOC = "C17"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L20N_T3_A19_15,					Sch name = JA8
+NET "CAM_px_data<6>"			LOC = "D18"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L21N_T3_A17_15,					Sch name = JA9
+NET "CAM_px_data<7>"			LOC = "E18"	| IOSTANDARD = "LVCMOS33";	
 # USANDO NEXYS4DDR
 ## Pmod Header JA
-NET "CAM_px_data<0>"             LOC=C17   |   IOSTANDARD="LVCMOS33";   #IO_L20N_T3_A19_15
-NET "CAM_px_data<1>"             LOC=D18   |   IOSTANDARD="LVCMOS33";   #IO_L21N_T3_DQS_A18_15
-NET "CAM_px_data<2>"             LOC=E18   |   IOSTANDARD="LVCMOS33";   #IO_L21P_T3_DQS_15
-NET "CAM_px_data<3>"             LOC=G17   |   IOSTANDARD="LVCMOS33";   #IO_L18N_T2_A23_15
-NET "CAM_px_data<4>"             LOC=D17   |   IOSTANDARD="LVCMOS33";   #IO_L16N_T2_A27_15
-NET "CAM_px_data<5>"             LOC=E17   |   IOSTANDARD="LVCMOS33";   #IO_L16P_T2_A28_15
-NET "CAM_px_data<6>"             LOC=F18   |   IOSTANDARD="LVCMOS33";   #IO_L22N_T3_A16_15
-NET "CAM_px_data<7>"             LOC=G18   |   IOSTANDARD="LVCMOS33";   #IO_L22P_T3_A17_15
+#NET "CAM_px_data<0>"             LOC=C17   |   IOSTANDARD="LVCMOS33";   #IO_L20N_T3_A19_15
+#NET "CAM_px_data<1>"             LOC=D18   |   IOSTANDARD="LVCMOS33";   #IO_L21N_T3_DQS_A18_15
+#NET "CAM_px_data<2>"             LOC=E18   |   IOSTANDARD="LVCMOS33";   #IO_L21P_T3_DQS_15
+#NET "CAM_px_data<3>"             LOC=G17   |   IOSTANDARD="LVCMOS33";   #IO_L18N_T2_A23_15
+#NET "CAM_px_data<4>"             LOC=D17   |   IOSTANDARD="LVCMOS33";   #IO_L16N_T2_A27_15
+#NET "CAM_px_data<5>"             LOC=E17   |   IOSTANDARD="LVCMOS33";   #IO_L16P_T2_A28_15
+#NET "CAM_px_data<6>"             LOC=F18   |   IOSTANDARD="LVCMOS33";   #IO_L22N_T3_A16_15
+#NET "CAM_px_data<7>"             LOC=G18   |   IOSTANDARD="LVCMOS33";   #IO_L22P_T3_A17_15
 
     # Pmod Header JB
 #NET "CAM_href"			LOC = "F3"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L13N_T2_MRCC_35,					Sch name = JD10
-#NET "CAM_href"			LOC = "G14"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L15N_T2_DQS_ADV_B_15,				Sch name = JB1
-#NET "CAM_pclk"			LOC = "P15"	| IOSTANDARD = "LVCMOS33";		#Bank = 14, Pin name = IO_L13P_T2_MRCC_14,					Sch name = JB2
-#NET "CAM_vsync"			LOC = "V11"	| IOSTANDARD = "LVCMOS33";		#Bank = 14, Pin name = IO_L21N_T3_DQS_A06_D22_14,			Sch name = JB3
-#NET "CAM_xclk"			LOC = "V15"	| IOSTANDARD = "LVCMOS33";		#Bank = CONFIG, Pin name = IO_L16P_T2_CSI_B_14,				Sch name = JB4
-#NET "CAM_pwdn"			LOC = "K16"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_25_15,							Sch name = JB7
-#NET "CAM_reset"			LOC = "R16"	| IOSTANDARD = "LVCMOS33";		#Bank = CONFIG, Pin name = IO_L15P_T2_DQS_RWR_B_14,			Sch name = JB8
+NET "CAM_href"			LOC = "G14"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L15N_T2_DQS_ADV_B_15,				Sch name = JB1
+NET "CAM_pclk"			LOC = "P15"	| IOSTANDARD = "LVCMOS33";		#Bank = 14, Pin name = IO_L13P_T2_MRCC_14,					Sch name = JB2
+NET "CAM_vsync"			LOC = "V11"	| IOSTANDARD = "LVCMOS33";		#Bank = 14, Pin name = IO_L21N_T3_DQS_A06_D22_14,			Sch name = JB3
+NET "CAM_xclk"			LOC = "V15"	| IOSTANDARD = "LVCMOS33";		#Bank = CONFIG, Pin name = IO_L16P_T2_CSI_B_14,				Sch name = JB4
+NET "CAM_pwdn"			LOC = "K16"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_25_15,							Sch name = JB7
+NET "CAM_reset"			LOC = "R16"	| IOSTANDARD = "LVCMOS33";		#Bank = CONFIG, Pin name = IO_L15P_T2_DQS_RWR_B_14,			Sch name = JB8
 #NET "JB<6>"			LOC = "T9"  | IOSTANDARD = "LVCMOS33";		#Bank = 14, Pin name = IO_L24P_T3_A01_D17_14,				Sch name = JB9
 #NET "JB<7>"			LOC = "U11"	| IOSTANDARD = "LVCMOS33";		#Bank = 14, Pin name = IO_L19N_T3_A09_D25_VREF_14,			Sch name = JB10 
  ## Pmod Header JB de la nexys4DDR
-NET "CAM_href"             LOC=D14   |   IOSTANDARD="LVCMOS33";   #IO_L1P_T0_AD0P_15
-NET "CAM_vsync"             LOC=F16   |   IOSTANDARD="LVCMOS33";   #IO_L14N_T2_SRCC_15
-NET "CAM_pclk"             LOC=G16   |   IOSTANDARD="LVCMOS33";   #IO_L13N_T2_MRCC_15
-NET "CAM_xclk"             LOC=H14   |   IOSTANDARD="LVCMOS33";   #IO_L15P_T2_DQS_15
-NET "CAM_pwdn"             LOC=E16   |   IOSTANDARD="LVCMOS33";   #IO_L11N_T1_SRCC_15
-NET "CAM_reset"             LOC=F13   |   IOSTANDARD="LVCMOS33";   #IO_L5P_T0_AD9P_15
-NET "CAM_pclk" CLOCK_DEDICATED_ROUTE=FALSE;
+#NET "CAM_href"             LOC=D14   |   IOSTANDARD="LVCMOS33";   #IO_L1P_T0_AD0P_15
+#NET "CAM_vsync"             LOC=F16   |   IOSTANDARD="LVCMOS33";   #IO_L14N_T2_SRCC_15
+#NET "CAM_pclk"             LOC=G16   |   IOSTANDARD="LVCMOS33";   #IO_L13N_T2_MRCC_15
+#NET "CAM_xclk"             LOC=H14   |   IOSTANDARD="LVCMOS33";   #IO_L15P_T2_DQS_15
+#NET "CAM_pwdn"             LOC=E16   |   IOSTANDARD="LVCMOS33";   #IO_L11N_T1_SRCC_15
+#NET "CAM_reset"             LOC=F13   |   IOSTANDARD="LVCMOS33";   #IO_L5P_T0_AD9P_15
+#NET "CAM_pclk" CLOCK_DEDICATED_ROUTE=FALSE;
 #NET "jb<9>"             LOC=G13   |   IOSTANDARD="LVCMOS33";   #IO_0_15
 #NET "jb<10>"            LOC=H16   |   IOSTANDARD="LVCMOS33";   #IO_L13P_T2_MRCC_15
 
 
 
 ##
-#NET "rst"				LOC = "E16"	| IOSTANDARD = "LVCMOS33";
+NET "rst"				LOC = "E16"	| IOSTANDARD = "LVCMOS33";
 ## NEXYS4DDR
-NET   "rst"           LOC=N17   |   IOSTANDARD="LVCMOS33";   #IO_L9P_T1_DQS_14
+#NET   "rst"           LOC=N17   |   IOSTANDARD="LVCMOS33";   #IO_L9P_T1_DQS_14
 
 ## VGA Connector
-#NET "VGA_R<0>"		LOC = "A3"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L8N_T1_AD14N_35,					Sch name = VGA_R0
-#NET "VGA_R<1>"		LOC = "B4"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L7N_T1_AD6N_35,					Sch name = VGA_R1
-#NET "VGA_R<2>"		LOC = "C5"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L1N_T0_AD4N_35,					Sch name = VGA_R2
-#NET "VGA_R<3>"		LOC = "A4"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L8P_T1_AD14P_35,					Sch name = VGA_R3
-#NET "VGA_B<0>"		LOC = "B7"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L2P_T0_AD12P_35,					Sch name = VGA_B0
-#NET "VGA_B<1>"		LOC = "C7"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L4N_T0_35,						Sch name = VGA_B1
-#NET "VGA_B<2>"		LOC = "D7"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L6N_T0_VREF_35,					Sch name = VGA_B2
-#NET "VGA_B<3>"		LOC = "D8"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L4P_T0_35,						Sch name = VGA_B3
-#NET "VGA_G<0>"		LOC = "C6"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L1P_T0_AD4P_35,					Sch name = VGA_G0
-#NET "VGA_G<1>"		LOC = "A5"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L3N_T0_DQS_AD5N_35,				Sch name = VGA_G1
-#NET "VGA_G<2>"		LOC = "B6"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L2N_T0_AD12N_35,					Sch name = VGA_G2
-#NET "VGA_G<3>"		LOC = "A6"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L3P_T0_DQS_AD5P_35,				Sch name = VGA_G3
-#NET "VGA_Hsync_n"			LOC = "B11"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L4P_T0_15,						Sch name = VGA_HS
-#NET "VGA_Vsync_n"			LOC = "B12"	| IOSTANDARD = "LVCMOS33";
+NET "VGA_R<0>"		LOC = "A3"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L8N_T1_AD14N_35,					Sch name = VGA_R0
+NET "VGA_R<1>"		LOC = "B4"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L7N_T1_AD6N_35,					Sch name = VGA_R1
+NET "VGA_R<2>"		LOC = "C5"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L1N_T0_AD4N_35,					Sch name = VGA_R2
+NET "VGA_R<3>"		LOC = "A4"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L8P_T1_AD14P_35,					Sch name = VGA_R3
+NET "VGA_B<0>"		LOC = "B7"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L2P_T0_AD12P_35,					Sch name = VGA_B0
+NET "VGA_B<1>"		LOC = "C7"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L4N_T0_35,						Sch name = VGA_B1
+NET "VGA_B<2>"		LOC = "D7"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L6N_T0_VREF_35,					Sch name = VGA_B2
+NET "VGA_B<3>"		LOC = "D8"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L4P_T0_35,						Sch name = VGA_B3
+NET "VGA_G<0>"		LOC = "C6"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L1P_T0_AD4P_35,					Sch name = VGA_G0
+NET "VGA_G<1>"		LOC = "A5"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L3N_T0_DQS_AD5N_35,				Sch name = VGA_G1
+NET "VGA_G<2>"		LOC = "B6"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L2N_T0_AD12N_35,					Sch name = VGA_G2
+NET "VGA_G<3>"		LOC = "A6"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L3P_T0_DQS_AD5P_35,				Sch name = VGA_G3
+NET "VGA_Hsync_n"			LOC = "B11"	| IOSTANDARD = "LVCMOS33";		#Bank = 15, Pin name = IO_L4P_T0_15,						Sch name = VGA_HS
+NET "VGA_Vsync_n"			LOC = "B12"	| IOSTANDARD = "LVCMOS33";
 ##VGA Connector NEXYS4DDR
-NET "VGA_R<0>"        LOC=A3   |   IOSTANDARD="LVCMOS33";   #IO_L8N_T1_AD14N_35
-NET "VGA_R<1>"        LOC=B4   |   IOSTANDARD="LVCMOS33";   #IO_L7N_T1_AD6N_35
-NET "VGA_R<2>"        LOC=C5   |   IOSTANDARD="LVCMOS33";   #IO_L1N_T0_AD4N_35
-NET "VGA_R<3>"        LOC=A4   |   IOSTANDARD="LVCMOS33";   #IO_L8P_T1_AD14P_35
-NET "VGA_G<0>"      LOC=C6   |   IOSTANDARD="LVCMOS33";   #IO_L1P_T0_AD4P_35
-NET "VGA_G<1>"      LOC=A5   |   IOSTANDARD="LVCMOS33";   #IO_L3N_T0_DQS_AD5N_35
-NET "VGA_G<2>"      LOC=B6   |   IOSTANDARD="LVCMOS33";   #IO_L2N_T0_AD12N_35
-NET "VGA_G<3>"      LOC=A6   |   IOSTANDARD="LVCMOS33";   #IO_L3P_T0_DQS_AD5P_35
-NET "VGA_B<0>"      LOC=B7   |   IOSTANDARD="LVCMOS33";   #IO_L2P_T0_AD12P_35
-NET "VGA_B<1>"      LOC=C7   |   IOSTANDARD="LVCMOS33";   #IO_L4N_T0_35
-NET "VGA_B<2>"      LOC=D7   |   IOSTANDARD="LVCMOS33";   #IO_L6N_T0_VREF_35
-NET "VGA_B<3>"      LOC=D8   |   IOSTANDARD="LVCMOS33";   #IO_L4P_T0_35
-NET "VGA_Hsync_n"          LOC=B11 | IOSTANDARD="LVCMOS33"; #IO_L4P_T0_15
-NET "VGA_Vsync_n"          LOC=B12 | IOSTANDARD="LVCMOS33"; #IO_L3N_T0_DQS_AD1N_15
+#NET "VGA_R<0>"        LOC=A3   |   IOSTANDARD="LVCMOS33";   #IO_L8N_T1_AD14N_35
+#NET "VGA_R<1>"        LOC=B4   |   IOSTANDARD="LVCMOS33";   #IO_L7N_T1_AD6N_35
+#NET "VGA_R<2>"        LOC=C5   |   IOSTANDARD="LVCMOS33";   #IO_L1N_T0_AD4N_35
+#NET "VGA_R<3>"        LOC=A4   |   IOSTANDARD="LVCMOS33";   #IO_L8P_T1_AD14P_35
+#NET "VGA_G<0>"      LOC=C6   |   IOSTANDARD="LVCMOS33";   #IO_L1P_T0_AD4P_35
+#NET "VGA_G<1>"      LOC=A5   |   IOSTANDARD="LVCMOS33";   #IO_L3N_T0_DQS_AD5N_35
+#NET "VGA_G<2>"      LOC=B6   |   IOSTANDARD="LVCMOS33";   #IO_L2N_T0_AD12N_35
+#NET "VGA_G<3>"      LOC=A6   |   IOSTANDARD="LVCMOS33";   #IO_L3P_T0_DQS_AD5P_35
+#NET "VGA_B<0>"      LOC=B7   |   IOSTANDARD="LVCMOS33";   #IO_L2P_T0_AD12P_35
+#NET "VGA_B<1>"      LOC=C7   |   IOSTANDARD="LVCMOS33";   #IO_L4N_T0_35
+#NET "VGA_B<2>"      LOC=D7   |   IOSTANDARD="LVCMOS33";   #IO_L6N_T0_VREF_35
+#NET "VGA_B<3>"      LOC=D8   |   IOSTANDARD="LVCMOS33";   #IO_L4P_T0_35
+#NET "VGA_Hsync_n"          LOC=B11 | IOSTANDARD="LVCMOS33"; #IO_L4P_T0_15
+#NET "VGA_Vsync_n"          LOC=B12 | IOSTANDARD="LVCMOS33"; #IO_L3N_T0_DQS_AD1N_15
 
 # Pmod Header JC
 #NET "JC<0>"			LOC = "K2"	| IOSTANDARD = "LVCMOS33";		#Bank = 35, Pin name = IO_L23P_T3_35,						Sch name = JC1

@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="impact" timeStamp="Wed Feb 12 23:00:50 2020">
+<application name="impact" timeStamp="Thu Feb 13 17:09:47 2020">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="c1e77bc30ab84f69ae08721cbf4d6cab"/>
+<property name="ProjectID" value="ab51416820ff4fe787efff26cfc1bf2c"/>
 <property name="ProjectIteration" value="1"/>
 </section>
 <section name="iMPACT Project Info" visible="true">
@@ -31,9 +31,15 @@ This means code written to parse this file will need to be revisited each subseq
 "/>
 <property name="BSCAN Operation" value="Program -p 0
 "/>
+<property name="BSCAN Operation" value="Program -p 0
+"/>
+<property name="BSCAN Operation" value="Program -p 0
+"/>
+<property name="BSCAN Operation" value="Program -p 0
+"/>
 </item>
 <item name="Cable Summary">
-<property name="Cable Type" value="Digilent Nexys4DDR"/>
+<property name="Cable Type" value="Digilent Nexys4"/>
 <property name="Cable Speed" value="10000000"/>
 <property name="Port" value="Plugin Cable"/>
 <property name="Local_Server_Mode" value="Local"/>
