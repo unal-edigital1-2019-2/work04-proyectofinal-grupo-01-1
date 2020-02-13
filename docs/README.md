@@ -45,7 +45,7 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
 		    input [7:0] px_data,    //entrada de dato de 8 bits de la cámara(correspondiente a una parte de un píxel)
 
 		    output reg [AW-1:0] mem_px_addr=0, // address de ña memoria (posición donde se está escribiendo)
-		    output reg [7:0]  mem_px_data, // RGB 565 to RGB 332 aquí trnansformamos e RGB 565 a RGB 332
+		    output reg [7:0]  mem_px_data, // RGB 565 to RGB 332 aquí trnansformamos el RGB 565 a RGB 332
 		    output reg px_wr //  nos indica si estamos escribiendo en memoria o no
    );
    reg [1:0]cs=0;// actúa como el contador de  case
@@ -54,12 +54,12 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
 always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando pclk se encuentre en un flanco de subida
 	case (cs)//inicio de la máquina de estados
 	0: begin// estado 0 de la máquina de estados cs=00
-		if(ovsync && !vsync)begin//rápidamente ovsync ha toamdo el primer valor de vsync y procedemos a compararlos, con && garantizamos una comparación de tipo AND
+		if(ovsync && !vsync)begin//rápidamente ovsync ha tomado el primer valor de vsync y procedemos a compararlos, con && garantizamos una comparación de tipo AND
 		cs=1;// si ovsync y !vsync =1 entonces procedemos a pasar al case 1
 		mem_px_addr=0;//iniciamos en la posición de memoria 0
 		end
 	end
-	1: begin// primer primer estado, cs=01, en este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
+	1: begin// primer estado, cs=01, en este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
 		px_wr=0;// indicamos que aún no escribimos en la memoria
 		if (href) begin//debemos asegurar que href se encuentre en flanco de subida para hacer el proceso
 /****************************************************************
@@ -73,7 +73,7 @@ always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando
 				mem_px_data[4]=px_data[2];              
 				mem_px_data[3]=px_data[1];         
 				mem_px_data[2]=px_data[0];
-				cs=2;// despues de tomar los datos más significativos ásamos al estado 2 
+				cs=2;// despues de tomar los datos más significativos pasamos al estado 2 
 		end
 	end
 	2: begin// estado 2, en este estado procedemos a tomar los datos del color azul(B) que vienen en formato 565 RGB y se pasa a 332 RGB
@@ -91,7 +91,7 @@ always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando
 		end
 		end
 endcase
-	ovsync<=vsync;// se usa para que recurentemente ovsync tome el valor pasado de vsync
+	ovsync<=vsync;// se usa para que recurrentemente ovsync tome el valor pasado de vsync
 end
 endmodule
 ```
