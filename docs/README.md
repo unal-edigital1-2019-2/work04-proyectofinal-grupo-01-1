@@ -154,6 +154,6 @@ Entre las diferentes pruebas realizadas para verificar el funcionamiento del dis
 * Prueba final: Como ultima prueba se buscó obtener la imagen grabada por la cámara evidenciando una posible desincronización de las señales de entrada ó el fallo físco de la cámara.
 ![DIAGRAMA1](/docs/figs/Prueba_barracolores.jfif)
 
-# Simulación:
+### Simulación:
 En el paquete de trabajo número 3 se proporsionó una simulación para verificar el funcionamiento de la descripción de hardware ya que debido al paro presentado no se encontraban disponibles los equipos necesarios para su prueba.
 ![DIAGRAMA1](/docs/figs/simulacion.png)
