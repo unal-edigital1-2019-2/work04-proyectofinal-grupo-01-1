@@ -6,7 +6,7 @@ que debe tomar los datos de entrada de la cámara que se encuentran en RGB 565 y
 e instanciarlo en el test_cam.v.
 
 //código
-![DIAGRAMA](docs/imagnes/grafico1.png)
+![DIAGRAMA1](.docs/imagnes/grafico1.png)
 
 
 
@@ -18,4 +18,3 @@ este código corresponde a la captura de datos.
 
 En esta parte del proyecto se realizó la integración de los módulos del proyecto junto con todas las pruebas pertinentes para lograr los objetivos planteados al inicio del proyecto.
 
->>>>>>> f8d724157ec93f0576278f7b1689e2c38358df2a
