@@ -146,6 +146,17 @@ Para instanciar este bloque en el test_cam.v se utiliza el siguiente código
 		.px_wr(DP_RAM_regW)
    )
 ```
+### Configuración de la cámara por medio de arduino
+Para la implementación de la descripción de hardware fue necesario realizar una configuración a la cámara OV7670 mediante una tarjeta arduino uno para ajustar los parámetros de captura de imagen, de acuerdo con los estandares planteados para el proyecto, entre los registros principales modificados en arduino están:
+* COM7: Se modifica este registro con el fin de activar el modo QCIF, RGB y el test de la barra de color.
+* CLKRC: Este registro se cmabió para usar un reloj externo en la cámara.
+* COM3: Activa el escalado.
+* COM14: Habilita el escalado manual para el formato QCIF.
+* COM15: Formato RGB 565 en la cámara.
+* COM17: Activar la barra de color.
+* COM9: Modifica la ganancia de la imagen.
+* COM12: Mantiene siempre activo Href.
+
 Entre las diferentes pruebas realizadas para verificar el funcionamiento del dispositivo tenemos:
 
 * Prueba de los límites de la imagen: para esta prueba se se reemplazaron los datos de la cámara por el valor binario del color rojo para verificar que el modulo de alimentación a memoria fuciona correctamente.
