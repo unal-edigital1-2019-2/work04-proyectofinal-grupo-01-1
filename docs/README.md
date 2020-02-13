@@ -30,4 +30,18 @@ una vez realizado esto se concluye que que se usará una máquina de estados en 
 ![DIAGRAMA1](/docs/figs/Maquina_estados.png)
 
 
+```verilog
+        module cam_read #(
+		    parameter AW = 15		// Cantidad de bits  de la dirección 
+		    )(
+		    input pclk,
+		    input rst,
+		    input vsync,
+		    input href,
+		    input [7:0] px_data,
 
+		    output reg [AW-1:0] mem_px_addr=0,
+		    output reg [7:0]  mem_px_data,
+		    output reg px_wr
+   );
+```
