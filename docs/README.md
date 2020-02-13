@@ -14,7 +14,8 @@ posteriormente al realizar el análizis de este diagrama se concluye que Vsync s
 este código corresponde a la captura de datos.
 
 una vez entendido se procede a la realización de un diagrama de bloques funcional de la solución a la captura de datos
-![DIAGRAMA1](/docs/figs/Diagrama de flujo_cam_read.PNG)
+
+![DIAGRAMA1](/docs/figs/Diagrama_de_flujo_cam_read.PNG)
 
 
 
