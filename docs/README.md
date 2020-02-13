@@ -37,7 +37,7 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
 
    ![DIAGRAMA1](/docs/figs/Maquina_estados.png)
 
-
+### DESARROLLO
 ```verilog
         module cam_read #(
 		    parameter AW = 15		// Cantidad de bits  de la dirección 
@@ -112,7 +112,7 @@ endcase
 end
 endmodule
 ```
-
+### ETAPA DE INSTANCIACIÓN 
 Para instanciar este bloque en el test_cam.v se utiliza el siguiente código
 
 ``` verilog
@@ -128,6 +128,7 @@ Para instanciar este bloque en el test_cam.v se utiliza el siguiente código
 		.px_wr(DP_RAM_regW)
    )
 ```
+## PRUEBAS
 Entre las diferentes pruebas realizadas para verificar el funcionamiento del dispositivo tenemos:
 
 * Prueba de los límites de la imagen: para esta prueba se se reemplazaron los datos de la cámara por el valor binario del color rojo para verificar que el modulo de alimentación a memoria fuciona correctamente.
@@ -143,6 +144,6 @@ Entre las diferentes pruebas realizadas para verificar el funcionamiento del dis
 * Prueba final: Como ultima prueba se buscó obtener la imagen grabada por la cámara evidenciando una posible desincronización de las señales de entrada ó el fallo físco de la cámara.
 ![DIAGRAMA1](/docs/figs/Prueba_barracolores.jfif)
 
-# Simulación:
+## SIMULACIÓN:
 En el paquete de trabajo número 3 se proporsionó una simulación para verificar el funcionamiento de la descripción de hardware ya que debido al paro presentado no se encontraban disponibles los equipos necesarios para su prueba.
 ![DIAGRAMA1](/docs/figs/simulacion.png)
