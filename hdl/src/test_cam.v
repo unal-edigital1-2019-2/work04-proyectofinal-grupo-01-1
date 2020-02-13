@@ -21,6 +21,7 @@
 module test_cam(
     input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
     input wire rst,         	// reset button
+	 input wire CAM_btn,				// Tomar foto
 
 	// VGA input/output  
     output wire VGA_Hsync_n,  // horizontal sync output
@@ -41,7 +42,6 @@ module test_cam(
 	input wire CAM_vsync,
 	input wire CAM_href,
 	input wire [7:0] CAM_px_data
-
 		
 );
 
@@ -173,6 +173,7 @@ end
 		.vsync(CAM_vsync),
 		.href(CAM_href),
 		.px_data(CAM_px_data),
+		.btn(CAM_btn),
 
 		.mem_px_addr(DP_RAM_addr_in),
 		.mem_px_data(DP_RAM_data_in),

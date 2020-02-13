@@ -1,8 +1,9 @@
 //! **************************************************************************
-// Written by: Map P.68d on Thu Feb 13 17:03:00 2020
+// Written by: Map P.68d on Thu Feb 13 21:41:19 2020
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "CAM_btn" LOCATE = SITE "T16" LEVEL 1;
 COMP "VGA_R<0>" LOCATE = SITE "A3" LEVEL 1;
 COMP "VGA_R<1>" LOCATE = SITE "B4" LEVEL 1;
 COMP "VGA_R<2>" LOCATE = SITE "C5" LEVEL 1;
