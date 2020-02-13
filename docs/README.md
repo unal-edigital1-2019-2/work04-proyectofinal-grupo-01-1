@@ -7,18 +7,18 @@ e instanciarlo en el test_cam.v.
 
 ![DIAGRAMA1](/docs/figs/cajacapturadatos.png)
 
-se debían sincronizar las señales de entrada para poder realizar una captura de datos correcta, para ello se analizó el siguiente diagrama:
+Se debían sincronizar las señales de entrada para poder realizar una captura de datos correcta, para ello se analizó el siguiente diagrama:
 
 ![DIAGRAMA1](/docs/figs/cajacapturadatos2.PNG)
-posteriormente al realizar el análizis de este diagrama se concluye que Vsync será el encargado de decir cuándo se inica la imagen y cuándo finaliza, el href nos dice cuándo se hace el cambio de columna de datos, mientras ue pclk se encarga de decirnos qué pixel nos encontramos leyendo.
+Posteriormente al realizar el análizis de este diagrama se concluye que Vsync será el encargado de decir cuándo se inica la imagen y cuándo finaliza, el href nos dice cuándo se hace el cambio de columna de datos, mientras que pclk se encarga de decirnos qué pixel nos encontramos leyendo.
 este código corresponde a la captura de datos.
 
-una vez entendido se procede a la realización de un diagrama de bloques funcional de la solución a la captura de datos
+Una vez entendido se procede a la realización de un diagrama de bloques funcional de la solución a la captura de datos:
 
 ![DIAGRAMA1](/docs/figs/Diagrama_de_flujo_cam_read.PNG)
 
 
-una vez realizado esto se concluye que que se usará una máquina de estados en el código que nos perimta:
+Realizado esto se concluye que se usará una máquina de estados en el código que nos permita:
  * verificar el pclk(si está en flaco de subida)
  * verificar el estado de Vsync
  * verificar href
