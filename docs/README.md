@@ -180,4 +180,4 @@ En el paquete de trabajo número 3 se proporsionó una simulación para verifica
     ES IMPERATIVO REALIZAR PRIMERO UN DIAGRAMA A MANO EN UNA HOJA CON LÁPIZ, ESTO NOS PERMITE EVALUAR LA LÓGICA QUE        ESTAMOS USANDO Y SABER EN QUÉ NOS ESTAMOS EQUIVOCANDO.
 
 ### VIDEO DEL FUNCIONAMIENTO FINAL
-![DIAGRAMA1](/docs/figs/Prueba_video.mp4)
+!(/docs/figs/Prueba_video.mp4)!
