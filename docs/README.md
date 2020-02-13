@@ -6,7 +6,7 @@ que debe tomar los datos de entrada de la cámara que se encuentran en RGB 565 y
 e instanciarlo en el test_cam.v.
 
 //código
-![DIAGRAMA1](.docs/imagnes/grafico1.png)
+![DIAGRAMA1](docs/imagnes/grafico1.png)
 
 
 
