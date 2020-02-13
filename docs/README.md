@@ -110,7 +110,8 @@ always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando
 >>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
 		end
 	end
-	2: begin// Estado 2, en este estado procedemos a tomar los datos del color azul(B) que vienen en formato 565 RGB y se pasa a 332 RGB
+	2: begin// Estado 2, en este estado procedemos a tomar los datos del color azul(B) 
+    que vienen en formato 565 RGB y se pasa a 332 RGB
 				mem_px_data[1]=px_data[4];
 				mem_px_data[0]=px_data[3];
 			 	px_wr=1;//Procedemos a escribir en memoria
