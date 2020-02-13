@@ -13,4 +13,9 @@ se debían sincronizar las señales de entrada para poder realizar una captura d
 posteriormente al realizar el análizis de este diagrama se concluye que Vsync será el encargado de decir cuándo se inica la imagen y cuándo finaliza, el href nos dice cuándo se hace el cambio de columna de datos, mientras ue pclk se encarga de decirnos qué pixel nos encontramos leyendo.
 este código corresponde a la captura de datos.
 
+una vez entendido se procede a la realización de un diagrama de bloques funcional de la solución a la captura de datos
+![DIAGRAMA1](/docs/figs/Diagrama de flujo_cam_read.PNG)
+
+
+
 
