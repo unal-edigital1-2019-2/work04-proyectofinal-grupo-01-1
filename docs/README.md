@@ -164,10 +164,10 @@ En el paquete de trabajo número 3 se proporsionó una simulación para verifica
 ### 1
     PRECAUCIÓN 1:
             ¡ASEGURARSE DE QUE LA CONEXIÓN DE ENERGÍA DE LA CÁMARA SE HACE A 3.3 VOLTIOS Y NO HA 5 VOLTIOS! en esta ocasión la primera cámara se dañó debido a que se conectó a 5V.
- ![DIAGRAMA1](/docs/figs/cámaraquemada.JPEG)
+ ![DIAGRAMA1](/docs/figs/Camara_dañada.jfif)
  ### CÁMARA DAÑADA
 
- ![DIAGRAMA1](/docs/figs/pruebaexitosa.png)
+ ![DIAGRAMA1](/docs/figs/Camara_funcional.jfif)
 ### CÁMARA FUNCIONAL
 
     PRECAUCIÓN 2:
