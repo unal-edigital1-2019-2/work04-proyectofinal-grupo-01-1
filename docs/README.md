@@ -38,6 +38,7 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
         module cam_read #(
 		    parameter AW = 15		// Cantidad de bits  de la dirección 
 		    )(
+<<<<<<< HEAD
 		    input pclk,             //Entrada pclk de la cámara
 		    input rst,              //Reset de la cámara
 		    input vsync,            //Señal Vsync de la cámara que permite saber cuándo empieza una imagen
@@ -47,10 +48,22 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
 		    output reg [AW-1:0] mem_px_addr=0, // Address de la memoria (posición donde se está escribiendo)
 		    output reg [7:0]  mem_px_data, // RGB 565 to RGB 332 aquí trnansformamos el formto RGB 565 a RGB 332
 		    output reg px_wr //  Nos indica si estamos escribiendo en memoria o no
+=======
+		    input pclk,             //entrada pclk de la cámara
+		    input rst,              //reset de la cámara
+		    input vsync,            //señal Vsync de la cámara que permite saber cuándo empieza una imagen
+		    input href,             //señal href de la cámara que permite saber qué línea de píxeles se está escribiendo
+		    input [7:0] px_data,    //entrada de dato de 8 bits de la cámara(correspondiente a una parte de un píxel)
+
+		    output reg [AW-1:0] mem_px_addr=0, // address de ña memoria (posición donde se está escribiendo)
+		    output reg [7:0]  mem_px_data, // RGB 565 to RGB 332 aquí trnansformamos el RGB 565 a RGB 332
+		    output reg px_wr //  nos indica si estamos escribiendo en memoria o no
+>>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
    );
    reg [1:0]cs=0;// Actúa como el contador de case (para establecer los casos)
 	 reg ovsync;// Utilizado para guardar el valor pasado de Vsync
 	 
+<<<<<<< HEAD
 always @ (posedge pclk) begin// Sentencias que se llevan a cabo siempre y cuando pclk se encuentre en un flanco de subida
 	case (cs)//Inicio de la máquina de estados
 	0: begin// Estado 0 de la máquina de estados cs=00
@@ -62,6 +75,19 @@ always @ (posedge pclk) begin// Sentencias que se llevan a cabo siempre y cuando
 	1: begin// primer primer estado, cs=01, En este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
 		px_wr=0;// Indicamos que aún no escribimos en la memoria
 		if (href) begin//Debemos asegurar que href se encuentre en flanco de subida para hacer el proceso
+=======
+always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando pclk se encuentre en un flanco de subida
+	case (cs)//inicio de la máquina de estados
+	0: begin// estado 0 de la máquina de estados cs=00
+		if(ovsync && !vsync)begin//rápidamente ovsync ha tomado el primer valor de vsync y procedemos a compararlos, con && garantizamos una comparación de tipo AND
+		cs=1;// si ovsync y !vsync =1 entonces procedemos a pasar al case 1
+		mem_px_addr=0;//iniciamos en la posición de memoria 0
+		end
+	end
+	1: begin// primer estado, cs=01, en este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
+		px_wr=0;// indicamos que aún no escribimos en la memoria
+		if (href) begin//debemos asegurar que href se encuentre en flanco de subida para hacer el proceso
+>>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
 /****************************************************************
  En esta parte tomamos los datos más significativo de R(rojo) y V (Verde)
  del primer byte que vienen en formato 565(RGB) y lo guardamos en formato   
@@ -73,7 +99,11 @@ always @ (posedge pclk) begin// Sentencias que se llevan a cabo siempre y cuando
 				mem_px_data[4]=px_data[2];              
 				mem_px_data[3]=px_data[1];         
 				mem_px_data[2]=px_data[0];
+<<<<<<< HEAD
 				cs=2;// Después de tomar los datos más significativos pasamos al estado 2 
+=======
+				cs=2;// despues de tomar los datos más significativos pasamos al estado 2 
+>>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
 		end
 	end
 	2: begin// Estado 2, en este estado procedemos a tomar los datos del color azul(B) que vienen en formato 565 RGB y se pasa a 332 RGB
@@ -91,7 +121,11 @@ always @ (posedge pclk) begin// Sentencias que se llevan a cabo siempre y cuando
 		end
 		end
 endcase
+<<<<<<< HEAD
 	ovsync<=vsync;// Se usa para que recurrentemente ovsync tome el valor pasado de vsync
+=======
+	ovsync<=vsync;// se usa para que recurrentemente ovsync tome el valor pasado de vsync
+>>>>>>> 41e97c7b8d399dc4654ca6fddbeebe2ee66fd7a7
 end
 endmodule
 ```
@@ -113,12 +147,19 @@ Para instanciar este bloque ne el test_cam.v se utiliza el siguiente código
 ```
 Entre las diferentes pruebas realizadas para verificar el funcionamiento del dispositivo tenemos:
 
-* Prueba de los límites de la imagen
+* Prueba de los límites de la imagen: para esta prueba se se reemplazaron los datos de la cámara por el valor binario del color rojo para verificar que el modulo de alimentación a memoria fuciona correctamente.
 ![DIAGRAMA1](/docs/figs/Prueba_limitesdeimagen.jfif)
 
-* Prueba de barra de colores de la memoria
+* Prueba de barra de colores de la memoria: se muestra el valor default que se encuentra en memoria previo a conectar la cámara.
 ![DIAGRAMA1](/docs/figs/Prueba_barra_coloresenmemoria.jpeg)
 
-* Prueba de la barra de colores dada por la cámara
+* Prueba de la barra de colores dada por la cámara: Por medio del programa arduino se asignó por default la muestra de una barra de colores para los datos de la cámara
 ![DIAGRAMA1](/docs/figs/Prueba_barra_colorescamara.jpeg)
 ![DIAGRAMA1](/docs/figs/Prueba_barra_colorescamara2.jpeg)
+
+* Prueba final: Como ultima prueba se buscó obtener la imagen grabada por la cámara evidenciando una posible desincronización de las señales de entrada ó el fallo físco de la cámara.
+![DIAGRAMA1](/docs/figs/Prueba_barracolores.jfif)
+
+# Simulación:
+En el paquete de trabajo número 3 se proporsionó una simulación para verificar el funcionamiento de la descripción de hardware ya que debido al paro presentado no se encontraban disponibles los equipos necesarios para su prueba.
+![DIAGRAMA1](/docs/figs/simulacion.png)
