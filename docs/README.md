@@ -1,8 +1,9 @@
 
 # RESULTADOS FINALES DEL PROYECTO
-## Juan Pablo González Prieto 1075680988
-## Julián David Pulido Castañeda 1000163697
-## Sebastián Ruiz Pulido 1032504363
+## UNIVERSIDAD NACIONAL DE COLOMBIA-BOGOTÁ-2020-20192S
+### Juan Pablo González Prieto 1075680988
+### Julián David Pulido Castañeda 1000163697
+### Sebastián Ruiz Pulido 1032504363
 
 En el presente se encuentra documentado el trabajo del grupo para la realización de un módulo de captura de datos
 que debe tomar los datos de entrada de la cámara que se encuentran en RGB 565 y transformarlos a formato RGB 332
@@ -130,7 +131,7 @@ end
 endmodule
 ```
 
-Para instanciar este bloque ne el test_cam.v se utiliza el siguiente código
+Para instanciar este bloque en el test_cam.v se utiliza el siguiente código
 
 ``` verilog
     cam_read #(AW)ov7076_565_to_332(
