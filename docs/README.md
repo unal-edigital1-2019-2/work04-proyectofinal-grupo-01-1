@@ -35,36 +35,35 @@ Al entender los estados que se debían realizar se crea el diagrama de la máqui
         module cam_read #(
 		    parameter AW = 15		// Cantidad de bits  de la dirección 
 		    )(
-		    input pclk,
-		    input rst,
-		    input vsync,
-		    input href,
-		    input [7:0] px_data,
+		    input pclk,             //entrada pclk de la cámara
+		    input rst,              //reset de la cámara
+		    input vsync,            //señal Vsync de la cámara que permite saber cuándo empieza una imagen
+		    input href,             //señal href de la cámara que permite saber qué línea de píxeles se está escribiendo
+		    input [7:0] px_data,    //entrada de dato de 8 bits de la cámara(correspondiente a una parte de un píxel)
 
-		    output reg [AW-1:0] mem_px_addr=0,
-		    output reg [7:0]  mem_px_data,
-		    output reg px_wr
+		    output reg [AW-1:0] mem_px_addr=0, // address de ña memoria (posición donde se está escribiendo)
+		    output reg [7:0]  mem_px_data, // RGB 565 to RGB 332 aquí trnansformamos e RGB 565 a RGB 332
+		    output reg px_wr //  nos indica si estamos escribiendo en memoria o no
    );
-   reg [1:0]cs=0;
-	 reg ovsync;
+   reg [1:0]cs=0;// actúa como el contador de  case
+	 reg ovsync;// utilizado para guardar el valor pasado de Vsync
 	 
-always @ (posedge pclk) begin
-	case (cs)
-	0: begin
-		if(ovsync && !vsync)begin
-		cs=1;
-		mem_px_addr=0;
+always @ (posedge pclk) begin// sentencias que se llevan a cabo siempre y cuando pclk se encuentre en un flanco de subida
+	case (cs)//inicio de la máquina de estados
+	0: begin// estado 0 de la máquina de estados cs=00
+		if(ovsync && !vsync)begin//rápidamente ovsync ha toamdo el primer valor de vsync y procedemos a compararlos, con && garantizamos una comparación de tipo AND
+		cs=1;// si ovsync y !vsync =1 entonces procedemos a pasar al case 1
+		mem_px_addr=0;//iniciamos en la posición de memoria 0
 		end
-		mem_px_addr=0;
 	end
-	1: begin
-		px_wr=0;
-		if (href) begin
-				mem_px_data[7]=px_data[7];
-				mem_px_data[6]=px_data[6];
-				mem_px_data[5]=px_data[5];
-				mem_px_data[4]=px_data[2];
-				mem_px_data[3]=px_data[1];
+	1: begin// primer cas, cs=01, en este caso hacemos la captura de los datos y procedemos a convertirlos a RGB 332
+		px_wr=0;// indicamos que aún no escribimos en la memoria
+		if (href) begin//debemos asegurar que href se encuentre en flanco de subida para hacer el proceso
+				mem_px_data[7]=px_data[7];          /****************************************************************
+				mem_px_data[6]=px_data[6];              en esta parte tomamos los datos más significativo de R(rojo) y V (Verde)
+				mem_px_data[5]=px_data[5];              del primer byte que vienen en formato 565(RGB) y lo guardamos en formato   
+				mem_px_data[4]=px_data[2];              332(RGB)
+				mem_px_data[3]=px_data[1];          ******************************************************************/
 				mem_px_data[2]=px_data[0];
 				cs=2;
 		end
