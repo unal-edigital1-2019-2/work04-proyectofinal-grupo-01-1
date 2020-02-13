@@ -164,7 +164,12 @@ En el paquete de trabajo número 3 se proporsionó una simulación para verifica
 ### 1
     PRECAUCIÓN 1:
             ¡ASEGURARSE DE QUE LA CONEXIÓN DE ENERGÍA DE LA CÁMARA SE HACE A 3.3 VOLTIOS Y NO HA 5 VOLTIOS! en esta ocasión la primera cámara se dañó debido a que se conectó a 5V.
-            
+ ![DIAGRAMA1](/docs/figs/cámaraquemada)
+ ### CÁMARA DAÑADA
+
+ ![DIAGRAMA1](/docs/figs/pruebaexitosa)
+### CÁMARA FUNCIONAL
+
     PRECAUCIÓN 2:
             ¡ASEGURARSE DE QUE LA CONEXIÓN PULLDOW SE REALICE CORRECTAMENTE, ES DECIR QUE SE ENCUENTRE CONECTADA DE FORMA CORRECTA ENTRE SIOC Y SIOD A LAS RESISTENCIAS Y ENTRADAS DEL ARDUINO CORRESPONDIENTES!
 
